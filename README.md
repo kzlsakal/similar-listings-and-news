@@ -1,6 +1,6 @@
 # ReBurke / similar-listings-and-products
 
-> Product Description
+> A module that shows similar listings and related news on a product page
 
 ## Related Projects
 
