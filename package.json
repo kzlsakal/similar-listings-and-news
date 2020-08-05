@@ -1,0 +1,41 @@
+{
+  "name": "similar-listings-and-news",
+  "version": "1.0.0",
+  "description": "A module that shows similar listings and news for a product",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HRR47-FEC-Burke/similar-listings-and-news.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "webpack",
+    "babel",
+    "react",
+    "mongodb",
+    "mongoose",
+    "product",
+    "listing",
+    "carousel",
+    "modal"
+  ],
+  "author": "Doruk Gurleyen <dorukgurleyen@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HRR47-FEC-Burke/similar-listings-and-news/issues"
+  },
+  "homepage": "https://github.com/HRR47-FEC-Burke/similar-listings-and-news#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
