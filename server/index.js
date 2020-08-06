@@ -1,3 +1,5 @@
-const testCase = val => val;
+const testPort = val => process.env.PORT;
 
-module.exports.testCase = testCase;
+console.log(process.env.CLOUD_IMG_URL);
+
+module.exports.testPort = testPort;

@@ -1,5 +1,5 @@
 const index = require('./../../../server/index.js');
 
 test('Has a test case', () => {
-  expect(index.testCase('test')).toBe('test');
+  expect(index.testPort('test')).toBe('3005');
 });

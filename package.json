@@ -8,7 +8,7 @@
     "build": "webpack -p",
     "build:dev": "webpack -d --watch",
     "start": "node ./server/index.js",
-    "start:dev": "nodemon ./server/index.js"
+    "start:dev": "nodemon -r dotenv/config ./server/index.js"
   },
   "repository": {
     "type": "git",
@@ -44,10 +44,12 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
+    "dotenv": "^8.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "jest": "^26.2.2",
+    "nodemon": "^2.0.4",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   }
