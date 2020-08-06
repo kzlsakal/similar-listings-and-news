@@ -1,7 +1,16 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
+jobs:
+    build_and_save:
+        docker:
+        - image: circleci/node:latest
+        steps:
+            - checkout
+            - run: npm install
+            - run: npm test
+            - store_artifacts:
+                path: /bin/final_build
 workflows:
-  node-tests:
-    jobs:
-      - node/test
+    version: 2.1
+    main:
+        jobs:
+            - build_and_save
