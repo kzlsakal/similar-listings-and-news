@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-    build_and_save:
+    test_and_coverage:
         docker:
         - image: circleci/node:latest
         steps:
@@ -13,4 +13,4 @@ workflows:
     version: 2.1
     main:
         jobs:
-            - build_and_save
+            - test_and_coverage
