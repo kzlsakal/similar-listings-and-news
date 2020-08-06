@@ -1,7 +1,16 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
+jobs:
+    test_and_coverage:
+        docker:
+        - image: circleci/node:latest
+        steps:
+            - checkout
+            - run: npm install
+            - run: npm test
+            - store_artifacts:
+                path: coverage
 workflows:
-  node-tests:
-    jobs:
-      - node/test
+    version: 2.1
+    main:
+        jobs:
+            - test_and_coverage
