@@ -1,3 +1,3 @@
-const testPort = val => process.env.PORT;
+const testPort = val => 3005;
 
 module.exports.testPort = testPort;

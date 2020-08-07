@@ -20,7 +20,8 @@ const listingSchema = new Schema({
   priceOriginal: Number,
   priceDiscounted: Number,
   category: String,
-  // Non-Functioning, Poor, Fair, Good, Very Good, Excellent, Mint, B-Stock == Brand New
+  // Non-Functioning, Poor, Fair, Good, Very Good, Excellent, Mint
+  // B-Stock == Brand New
   condition: {type: Number, min: 1, max: 9},
   photosSmall: [String],
 });
