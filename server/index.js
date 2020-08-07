@@ -1,3 +1,3 @@
-const testPort = val => 3005;
+const testPort = val => '3005';
 
 module.exports.testPort = testPort;
