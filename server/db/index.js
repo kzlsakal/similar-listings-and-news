@@ -11,6 +11,7 @@ mongoose.connect(process.env.MONGODB_URL || DEFAULT_DB_URL, {
 const Schema = mongoose.Schema;
 
 const listingSchema = new Schema({
+  itemId: Number,
   name: String,
   brand: String,
   category: String,
@@ -22,10 +23,11 @@ const listingSchema = new Schema({
   priceActual: Number,
 });
 
+// eslint-disable-next-line camelcase
+listingSchema.plugin(AutoIncrement, {inc_field: 'itemId', start_seq: 0});
+
 const Listing = mongoose.model('Listing', listingSchema);
 
-// eslint-disable-next-line camelcase
-Listing.plugin(AutoIncrement, {inc_field: 'itemId'});
 
 const addListings = (...listings) => {
   return Listing.create(...listings);

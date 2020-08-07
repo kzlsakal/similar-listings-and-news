@@ -20,8 +20,8 @@ module.exports = {
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: [
     './server/**/*.{js,jsx}',
+    '!./server/db/*',
     './client/**/*.{js,jsx}'
-    // '!**/coverage/**'
   ],
 
   // The directory where Jest should output its coverage files
