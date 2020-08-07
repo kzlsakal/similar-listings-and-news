@@ -5,7 +5,9 @@ mongoose.Promise = Promise;
 
 mongoose.connect(process.env.MONGODB_URL || DEFAULT_DB_URL, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true
 });
 
 const Schema = mongoose.Schema;
@@ -14,20 +16,19 @@ const listingSchema = new Schema({
   itemId: Number,
   name: String,
   brand: String,
-  category: String,
   style: String,
+  priceOriginal: Number,
+  priceDiscounted: Number,
+  category: String,
   // Non-Functioning, Poor, Fair, Good, Very Good, Excellent, Mint, B-Stock == Brand New
   condition: {type: Number, min: 1, max: 9},
   photosSmall: [String],
-  priceOriginal: Number,
-  priceActual: Number,
 });
 
 // eslint-disable-next-line camelcase
 listingSchema.plugin(AutoIncrement, {inc_field: 'itemId', start_seq: 0});
 
 const Listing = mongoose.model('Listing', listingSchema);
-
 
 const addListings = (...listings) => {
   return Listing.create(...listings);

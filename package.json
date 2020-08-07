@@ -5,6 +5,7 @@
   "main": "server/index.js",
   "scripts": {
     "test": "jest",
+    "seed": "node -r dotenv/config spec/db-seed",
     "build": "webpack -p",
     "build:dev": "webpack -d --watch",
     "start": "node ./server/index.js",
