@@ -4,11 +4,13 @@
   "description": "A module that shows similar listings and news for a product",
   "main": "server/index.js",
   "scripts": {
+    "lint": "./node_modules/.bin/eslint .",
     "test": "jest",
+    "seed": "node -r dotenv/config spec/db-seed",
     "build": "webpack -p",
     "build:dev": "webpack -d --watch",
     "start": "node ./server/index.js",
-    "start:dev": "nodemon ./server/index.js"
+    "start:dev": "nodemon -r dotenv/config ./server/index.js"
   },
   "repository": {
     "type": "git",
@@ -36,6 +38,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "mongoose": "^5.9.27",
+    "mongoose-sequence": "^5.2.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -44,10 +47,14 @@
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
+    "dotenv": "^8.2.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^7.6.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "faker": "^4.1.0",
     "jest": "^26.2.2",
+    "nodemon": "^2.0.4",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   }
