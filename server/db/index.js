@@ -35,8 +35,8 @@ const addListings = (...listings) => {
   return Listing.create(...listings);
 };
 
-const getListings = (options = {}) => {
-  return Listing.find(options);
+const getListings = (options = {}, limit = 25) => {
+  return Listing.find(options).limit(limit);
 };
 
 const getListingById = (itemId) => {
