@@ -8,8 +8,8 @@ class SlnWrapper extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      listing: null,
-      similarListings: null
+      listing: {},
+      similarListings: []
     };
   }
 
@@ -40,7 +40,7 @@ class SlnWrapper extends Component {
   render () {
     return (
       <div>
-        Hello world
+        <SimilarListings listings={this.state.similarListings} />
       </div>
     );
   }
