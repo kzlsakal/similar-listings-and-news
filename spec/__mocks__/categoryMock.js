@@ -3,8 +3,8 @@ const response = {};
 response.data = [
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/3/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/3/small (2).jpg'
+      '/fec-sln/3/small (1).jpg',
+      '/fec-sln/3/small (2).jpg'
     ],
     '_id': '5f2e186c423f373565ec1da4',
     'name': 'Intelligent Plastic Hat Guitar',
@@ -19,11 +19,11 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/7/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/7/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/7/small (3).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/7/small (4).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/7/small (5).jpg'
+      '/fec-sln/7/small (1).jpg',
+      '/fec-sln/7/small (2).jpg',
+      '/fec-sln/7/small (3).jpg',
+      '/fec-sln/7/small (4).jpg',
+      '/fec-sln/7/small (5).jpg'
     ],
     '_id': '5f2e186c423f373565ec1da9',
     'name': 'Fantastic Steel Bike Guitar',
@@ -38,13 +38,13 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/8/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/8/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/8/small (3).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/8/small (4).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/8/small (5).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/8/small (6).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/8/small (7).jpg'
+      '/fec-sln/8/small (1).jpg',
+      '/fec-sln/8/small (2).jpg',
+      '/fec-sln/8/small (3).jpg',
+      '/fec-sln/8/small (4).jpg',
+      '/fec-sln/8/small (5).jpg',
+      '/fec-sln/8/small (6).jpg',
+      '/fec-sln/8/small (7).jpg'
     ],
     '_id': '5f2e186c423f373565ec1daa',
     'name': 'Refined Cotton Pants Guitar',
@@ -59,13 +59,13 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/9/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/9/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/9/small (3).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/9/small (4).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/9/small (5).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/9/small (6).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/9/small (7).jpg'
+      '/fec-sln/9/small (1).jpg',
+      '/fec-sln/9/small (2).jpg',
+      '/fec-sln/9/small (3).jpg',
+      '/fec-sln/9/small (4).jpg',
+      '/fec-sln/9/small (5).jpg',
+      '/fec-sln/9/small (6).jpg',
+      '/fec-sln/9/small (7).jpg'
     ],
     '_id': '5f2e186c423f373565ec1dab',
     'name': 'Fantastic Metal Ball Guitar',
@@ -79,8 +79,8 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/10/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/10/small (2).jpg'
+      '/fec-sln/10/small (1).jpg',
+      '/fec-sln/10/small (2).jpg'
     ],
     '_id': '5f2e186c423f373565ec1dac',
     'name': 'Fantastic Fresh Soap Guitar',
@@ -95,8 +95,8 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/17/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/17/small (2).jpg'
+      '/fec-sln/17/small (1).jpg',
+      '/fec-sln/17/small (2).jpg'
     ],
     '_id': '5f2e186c423f373565ec1db3',
     'name': 'Awesome Rubber Keyboard Guitar',
@@ -111,13 +111,13 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/18/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/18/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/18/small (3).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/18/small (4).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/18/small (5).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/18/small (6).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/18/small (7).jpg'
+      '/fec-sln/18/small (1).jpg',
+      '/fec-sln/18/small (2).jpg',
+      '/fec-sln/18/small (3).jpg',
+      '/fec-sln/18/small (4).jpg',
+      '/fec-sln/18/small (5).jpg',
+      '/fec-sln/18/small (6).jpg',
+      '/fec-sln/18/small (7).jpg'
     ],
     '_id': '5f2e186c423f373565ec1db5',
     'name': 'Intelligent Fresh Keyboard Guitar',
@@ -131,13 +131,13 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/20/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/20/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/20/small (3).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/20/small (4).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/20/small (5).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/20/small (6).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/20/small (7).jpg'
+      '/fec-sln/20/small (1).jpg',
+      '/fec-sln/20/small (2).jpg',
+      '/fec-sln/20/small (3).jpg',
+      '/fec-sln/20/small (4).jpg',
+      '/fec-sln/20/small (5).jpg',
+      '/fec-sln/20/small (6).jpg',
+      '/fec-sln/20/small (7).jpg'
     ],
     '_id': '5f2e186c423f373565ec1db7',
     'name': 'Refined Plastic Salad Guitar',
@@ -152,9 +152,9 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/22/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/22/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/22/small (3).jpg'
+      '/fec-sln/22/small (1).jpg',
+      '/fec-sln/22/small (2).jpg',
+      '/fec-sln/22/small (3).jpg'
     ],
     '_id': '5f2e186c423f373565ec1db9',
     'name': 'Generic Granite Sausages Guitar',
@@ -169,12 +169,12 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/24/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/24/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/24/small (3).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/24/small (4).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/24/small (5).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/24/small (6).jpg'
+      '/fec-sln/24/small (1).jpg',
+      '/fec-sln/24/small (2).jpg',
+      '/fec-sln/24/small (3).jpg',
+      '/fec-sln/24/small (4).jpg',
+      '/fec-sln/24/small (5).jpg',
+      '/fec-sln/24/small (6).jpg'
     ],
     '_id': '5f2e186c423f373565ec1dbb',
     'name': 'Ergonomic Frozen Gloves Guitar',
@@ -188,9 +188,9 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/29/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/29/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/29/small (3).jpg'
+      '/fec-sln/29/small (1).jpg',
+      '/fec-sln/29/small (2).jpg',
+      '/fec-sln/29/small (3).jpg'
     ],
     '_id': '5f2e186c423f373565ec1dc0',
     'name': 'Unbranded Wooden Bacon Guitar',
@@ -204,10 +204,10 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/31/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/31/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/31/small (3).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/31/small (4).jpg'
+      '/fec-sln/31/small (1).jpg',
+      '/fec-sln/31/small (2).jpg',
+      '/fec-sln/31/small (3).jpg',
+      '/fec-sln/31/small (4).jpg'
     ],
     '_id': '5f2e186c423f373565ec1dc2',
     'name': 'Fantastic Fresh Salad Guitar',
@@ -222,12 +222,12 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/33/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/33/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/33/small (3).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/33/small (4).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/33/small (5).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/33/small (6).jpg'
+      '/fec-sln/33/small (1).jpg',
+      '/fec-sln/33/small (2).jpg',
+      '/fec-sln/33/small (3).jpg',
+      '/fec-sln/33/small (4).jpg',
+      '/fec-sln/33/small (5).jpg',
+      '/fec-sln/33/small (6).jpg'
     ],
     '_id': '5f2e186c423f373565ec1dc4',
     'name': 'Rustic Concrete Keyboard Guitar',
@@ -242,11 +242,11 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/39/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/39/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/39/small (3).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/39/small (4).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/39/small (5).jpg'
+      '/fec-sln/39/small (1).jpg',
+      '/fec-sln/39/small (2).jpg',
+      '/fec-sln/39/small (3).jpg',
+      '/fec-sln/39/small (4).jpg',
+      '/fec-sln/39/small (5).jpg'
     ],
     '_id': '5f2e186c423f373565ec1dc9',
     'name': 'Generic Concrete Shoes Guitar',
@@ -260,11 +260,11 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/41/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/41/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/41/small (3).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/41/small (4).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/41/small (5).jpg'
+      '/fec-sln/41/small (1).jpg',
+      '/fec-sln/41/small (2).jpg',
+      '/fec-sln/41/small (3).jpg',
+      '/fec-sln/41/small (4).jpg',
+      '/fec-sln/41/small (5).jpg'
     ],
     '_id': '5f2e186c423f373565ec1dcb',
     'name': 'Sleek Wooden Keyboard Guitar',
@@ -278,9 +278,9 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/42/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/42/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/42/small (3).jpg'
+      '/fec-sln/42/small (1).jpg',
+      '/fec-sln/42/small (2).jpg',
+      '/fec-sln/42/small (3).jpg'
     ],
     '_id': '5f2e186c423f373565ec1dcc',
     'name': 'Small Granite Gloves Guitar',
@@ -295,13 +295,13 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/45/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/45/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/45/small (3).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/45/small (4).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/45/small (5).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/45/small (6).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/45/small (7).jpg'
+      '/fec-sln/45/small (1).jpg',
+      '/fec-sln/45/small (2).jpg',
+      '/fec-sln/45/small (3).jpg',
+      '/fec-sln/45/small (4).jpg',
+      '/fec-sln/45/small (5).jpg',
+      '/fec-sln/45/small (6).jpg',
+      '/fec-sln/45/small (7).jpg'
     ],
     '_id': '5f2e186c423f373565ec1dcf',
     'name': 'Gorgeous Wooden Pants Guitar',
@@ -316,9 +316,9 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/46/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/46/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/46/small (3).jpg'
+      '/fec-sln/46/small (1).jpg',
+      '/fec-sln/46/small (2).jpg',
+      '/fec-sln/46/small (3).jpg'
     ],
     '_id': '5f2e186d423f373565ec1dd0',
     'name': 'Tasty Granite Tuna Guitar',
@@ -332,12 +332,12 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/49/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/49/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/49/small (3).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/49/small (4).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/49/small (5).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/49/small (6).jpg'
+      '/fec-sln/49/small (1).jpg',
+      '/fec-sln/49/small (2).jpg',
+      '/fec-sln/49/small (3).jpg',
+      '/fec-sln/49/small (4).jpg',
+      '/fec-sln/49/small (5).jpg',
+      '/fec-sln/49/small (6).jpg'
     ],
     '_id': '5f2e186d423f373565ec1dd3',
     'name': 'Tasty Steel Chicken Guitar',
@@ -351,10 +351,10 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/52/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/52/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/52/small (3).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/52/small (4).jpg'
+      '/fec-sln/52/small (1).jpg',
+      '/fec-sln/52/small (2).jpg',
+      '/fec-sln/52/small (3).jpg',
+      '/fec-sln/52/small (4).jpg'
     ],
     '_id': '5f2e186d423f373565ec1dd6',
     'name': 'Generic Cotton Hat Guitar',
@@ -368,11 +368,11 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/56/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/56/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/56/small (3).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/56/small (4).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/56/small (5).jpg'
+      '/fec-sln/56/small (1).jpg',
+      '/fec-sln/56/small (2).jpg',
+      '/fec-sln/56/small (3).jpg',
+      '/fec-sln/56/small (4).jpg',
+      '/fec-sln/56/small (5).jpg'
     ],
     '_id': '5f2e186d423f373565ec1dda',
     'name': 'Sleek Frozen Chicken Guitar',
@@ -386,13 +386,13 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/57/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/57/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/57/small (3).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/57/small (4).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/57/small (5).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/57/small (6).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/57/small (7).jpg'
+      '/fec-sln/57/small (1).jpg',
+      '/fec-sln/57/small (2).jpg',
+      '/fec-sln/57/small (3).jpg',
+      '/fec-sln/57/small (4).jpg',
+      '/fec-sln/57/small (5).jpg',
+      '/fec-sln/57/small (6).jpg',
+      '/fec-sln/57/small (7).jpg'
     ],
     '_id': '5f2e186d423f373565ec1ddb',
     'name': 'Practical Cotton Table Guitar',
@@ -406,10 +406,10 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/62/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/62/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/62/small (3).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/62/small (4).jpg'
+      '/fec-sln/62/small (1).jpg',
+      '/fec-sln/62/small (2).jpg',
+      '/fec-sln/62/small (3).jpg',
+      '/fec-sln/62/small (4).jpg'
     ],
     '_id': '5f2e186d423f373565ec1de0',
     'name': 'Sleek Soft Keyboard Guitar',
@@ -424,9 +424,9 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/63/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/63/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/63/small (3).jpg'
+      '/fec-sln/63/small (1).jpg',
+      '/fec-sln/63/small (2).jpg',
+      '/fec-sln/63/small (3).jpg'
     ],
     '_id': '5f2e186d423f373565ec1de1',
     'name': 'Intelligent Fresh Chicken Guitar',
@@ -441,9 +441,9 @@ response.data = [
   },
   {
     'photosSmall': [
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/66/small (1).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/66/small (2).jpg',
-      'https://kizilsakal-dev.s3-us-west-2.amazonaws.com/fec-sln/66/small (3).jpg'
+      '/fec-sln/66/small (1).jpg',
+      '/fec-sln/66/small (2).jpg',
+      '/fec-sln/66/small (3).jpg'
     ],
     '_id': '5f2e186d423f373565ec1de4',
     'name': 'Intelligent Fresh Soap Guitar',
