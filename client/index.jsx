@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import styled, {css} from 'styled-components';
-
-const testCase = val => val;
+import SimilarListings from './components/SimilarListings.jsx';
 
 class Sln extends Component {
   constructor(props) {
@@ -18,4 +17,5 @@ class Sln extends Component {
 }
 
 window.Sln = Sln;
+
 export default Sln;
