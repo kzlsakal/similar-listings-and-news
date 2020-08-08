@@ -8,9 +8,10 @@ const CLOUD_IMG_URL = process.env.CLOUD_IMG_URL || '';
 
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, './../public')));
+app.use('/item/:id', express.static(path.resolve(__dirname, './../public')));
 
 // Handle GET Requests for a single listing item
-app.get('/item/:id', (req, res) => {
+app.get('/api/item/:id', (req, res) => {
   // Get the item id from the URL
   let itemId = req.params.id;
   // If URL includes a human-friendly name after id, find where it starts.
@@ -36,7 +37,7 @@ app.get('/item/:id', (req, res) => {
 });
 
 // Handle GET requests for listings under a category
-app.get('/listings/:category', (req, res) => {
+app.get('/api/listings/:category', (req, res) => {
   const category = req.params.category;
   db.getListings({category})
     .then(results => {
