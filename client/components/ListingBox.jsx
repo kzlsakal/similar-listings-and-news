@@ -1,3 +1,4 @@
+import React, {Component} from 'react';
 const ListingBox = (props) => {
   return (
     <div>

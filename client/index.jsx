@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import Styled from './styles.jsx';
+import GlobalStyle from './styles.jsx';
 import SimilarListings from './components/SimilarListings.jsx';
 const API_URL = document.location.origin;
 const PATH = document.location.pathname.slice(1);
 
-
-class SlnWrapper extends Component {
+class SlnWrapper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -42,14 +41,13 @@ class SlnWrapper extends Component {
   render () {
     return (
       <div>
-        <Styled.Fonts />
+        <GlobalStyle />
         <SimilarListings listings={this.state.similarListings} />
       </div>
     );
   }
 }
 
-window.Sln = SlnWrapper;
-window.SlnDOM = ReactDOM;
+ReactDOM.render(<SlnWrapper />, document.getElementById('sln'));
 
 export default SlnWrapper;
