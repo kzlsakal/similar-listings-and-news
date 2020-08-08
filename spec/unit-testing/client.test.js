@@ -8,7 +8,7 @@ test('Has a main wrapper class component', (done) => {
   done();
 });
 
-test('Attaches the wrapper class to global scope for proxy usage', (done) => {
-  expect(window.hasOwnProperty('Sln')).toBe(true);
+test('Renders on DOM with at least one header', (done) => {
+  expect(mount(<Sln />).find('h2').length).toBeGreaterThan(0);
   done();
 });
