@@ -52,8 +52,11 @@ const generateRandomListing = () => {
   ];
   // Add the guitar's condition
   randomListing.condition = Math.floor(Math.random() * 9) + 1;
-  // Generate file names for 7 small photos for the listing
-  const fileNames = Array(7).fill(0).map((file, i) => `small (${i + 1}).jpg`);
+  // Generate file names for 2 to 7 small photos for the listing
+  const randomNumberOfhotos = Math.floor((Math.random() * 6) + 2);
+  const fileNames = Array(randomNumberOfhotos).fill(0).map(
+    (file, i) => `small (${i + 1}).jpg`
+  );
   randomListing.photosSmall = fileNames;
   return randomListing;
 };
