@@ -3,4 +3,19 @@ import styled, {css} from 'styled-components';
 
 const testCase = val => val;
 
-export default testCase;
+class Sln extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render () {
+    return (
+      <div>
+        Hello world
+      </div>
+    );
+  }
+}
+
+window.Sln = Sln;
+export default Sln;
