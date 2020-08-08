@@ -55,6 +55,7 @@
     "eslint": "^7.6.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "faker": "^4.1.0",
+    "file-loader": "^6.0.0",
     "jest": "^26.2.2",
     "nodemon": "^2.0.4",
     "webpack": "^4.44.1",

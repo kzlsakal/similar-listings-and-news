@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
-import styled, {css} from 'styled-components';
+import ReactDOM from 'react-dom';
+import Styled from './styles.jsx';
 import SimilarListings from './components/SimilarListings.jsx';
 const API_URL = document.location.origin;
 const PATH = document.location.pathname.slice(1);
+
 
 class SlnWrapper extends Component {
   constructor(props) {
@@ -40,6 +42,7 @@ class SlnWrapper extends Component {
   render () {
     return (
       <div>
+        <Styled.Fonts />
         <SimilarListings listings={this.state.similarListings} />
       </div>
     );
@@ -47,5 +50,6 @@ class SlnWrapper extends Component {
 }
 
 window.Sln = SlnWrapper;
+window.SlnDOM = ReactDOM;
 
 export default SlnWrapper;
