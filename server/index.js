@@ -22,6 +22,9 @@ app.get('/item/:id', (req, res) => {
 
   db.getListingById(Number(itemId))
     .then(results => {
+      if (!results.length) {
+        res.status(404).end('404 - Listing was not found');
+      }
       const listing = results[0];
       // Add the Cloud Provider URL in front of each file name
       listing.photosSmall = listing.photosSmall.map(fileName => {
@@ -37,6 +40,9 @@ app.get('/listings/:category', (req, res) => {
   const category = req.params.category;
   db.getListings({category})
     .then(results => {
+      if (!results.length) {
+        res.status(404).end('404 - Category was not found');
+      }
       results.forEach(listing => {
         // Add the Cloud Provider URL in front of each file name
         listing.photosSmall = listing.photosSmall.map(fileName => {

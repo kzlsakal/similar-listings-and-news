@@ -32,15 +32,15 @@ listingSchema.plugin(AutoIncrement, {inc_field: 'itemId', start_seq: 0});
 const Listing = mongoose.model('Listing', listingSchema);
 
 const addListings = (...listings) => {
-  return Listing.create(...listings);
+  return Listing.create(...listings).exec();
 };
 
 const getListings = (options = {}, limit = 25) => {
-  return Listing.find(options).limit(limit);
+  return Listing.find(options).limit(limit).exec();
 };
 
 const getListingById = (itemId) => {
-  return Listing.find({itemId});
+  return Listing.find({itemId}).exec();
 };
 
 module.exports = {

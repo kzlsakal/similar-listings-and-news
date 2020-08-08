@@ -100,9 +100,19 @@ Listing.deleteMany({})
     console.log(`3) Added ${results.length} randomly generated items.`);
     const lengthOfProcess = new Date() - startOfProcess;
     console.log(`Process completed in ${lengthOfProcess} ms.`);
-    process.exit();
+    mongoose.disconnect((err) => {
+      if (err) {
+        throw err;
+      }
+      process.exit();
+    });
   })
   .catch((err) => {
     throw err;
-    process.exit();
+    mongoose.disconnect((err) => {
+      if (err) {
+        throw err;
+      }
+      process.exit();
+    });
   });
