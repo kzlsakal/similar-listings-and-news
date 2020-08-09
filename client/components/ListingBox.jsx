@@ -6,7 +6,6 @@ const ListingBox = (props) => {
       {props.listing.name}
     </Styles.BoxWrapper>
   );
-
 };
 
 export default ListingBox;
