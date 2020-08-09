@@ -1,5 +1,7 @@
 # Webpack bundle
 public/similar-listings-news.bundle.js
+public/*.woff
+public/*.woff2
 
 # Logs
 npm-debug.log*
