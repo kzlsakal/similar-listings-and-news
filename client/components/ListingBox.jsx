@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
+import React from 'react';
+import Styles from './../styles.jsx';
 const ListingBox = (props) => {
   return (
-    <div>
+    <Styles.BoxWrapper>
       {props.listing.name}
-    </div>
+    </Styles.BoxWrapper>
   );
 
 };

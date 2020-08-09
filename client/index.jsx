@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import GlobalStyle from './styles.jsx';
+import Styles from './styles.jsx';
 import SimilarListings from './components/SimilarListings.jsx';
 const API_URL = document.location.origin;
 const PATH = document.location.pathname.slice(1);
 
-class SlnWrapper extends React.Component {
+class SlnWrapper extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -41,7 +41,7 @@ class SlnWrapper extends React.Component {
   render () {
     return (
       <div>
-        <GlobalStyle />
+        <Styles.Global />
         <SimilarListings listings={this.state.similarListings} />
       </div>
     );
