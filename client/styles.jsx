@@ -162,13 +162,7 @@ const Styles = {
     margin-left: 2px;
     width: 4px;
     height: 3px;
-  `,
-  CarouselImg: styled.img`
-    object-fit: cover;
-    width: 210px;
-    height: 210px;
   `
-
 };
 
 export default Styles;
