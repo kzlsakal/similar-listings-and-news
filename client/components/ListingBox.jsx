@@ -1,5 +1,6 @@
 import React from 'react';
 import Styles from './../styles.jsx';
+import ConditionIndicator from './ConditionIndicator.jsx';
 import SmallCarousel from './SmallCarousel.jsx';
 const ORIGIN = document.location.origin;
 
@@ -31,9 +32,7 @@ const ListingBox = (props) => {
           <Styles.ListingActualPrice>
             {actualPrice}
           </Styles.ListingActualPrice>
-          <Styles.ListingCondition>
-            {props.listing.condition}
-          </Styles.ListingCondition>
+          <ConditionIndicator condition={props.listing.condition} preKey={props.listing.itemId}/>
         </Styles.ListingInfo>
       </Styles.BoxWrapper>
     </a>

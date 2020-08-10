@@ -72,8 +72,9 @@ const Styles = {
     font-weight: 700;
     grid-template-rows: 2fr 1fr;
     margin-right: 1.8em;
+    margin-bottom: .4em;
     &:hover {
-      box-shadow: 0 .1em .7em 0 rgba(33,33,33,.15);
+      box-shadow: 0 .1em .8em 0 rgba(33,33,33,.15);
       transition: box-shadow .1s ease-in-out;
     }
   `,
@@ -93,7 +94,7 @@ const Styles = {
     font-weight: 400;
     grid-column: 1/3;
     opacity: .6;
-    padding: 0 .3em;
+    padding: 0 .5em;
     text-decoration: line-through;
   `,
   ListingActualPrice: styled.div`
@@ -103,8 +104,64 @@ const Styles = {
   `,
   ListingCondition: styled.div`
     align-self: flex-end;
+    font-size: .7em;
+    line-height: .7em;
+    margin-right: .7em;
+    margin-bottom: .7em;
     text-align: right;
-    padding: 0 .3em;
+    color: ${props => {
+    switch (props.barCount) {
+    case 8:
+      return '#30c966';
+    case 7:
+      return '#30c966';
+    case 6:
+      return '#2ec9bc';
+    case 5:
+      return '#32b7ec';
+    case 4:
+      return '#e6c62c';
+    case 3:
+      return '#f8ae37';
+    case 2:
+      return '#bf4f18';
+    case 1:
+      return '#bf4f18';
+    }
+  }};
+  `,
+  ListingConditionBar: styled.div`
+    display: inline-block;
+    margin-left: 2px;
+    width: 4px;
+    height: 3px;
+    background-color: ${props => {
+    switch (props.barCount) {
+    case 8:
+      return '#30c966';
+    case 7:
+      return '#30c966';
+    case 6:
+      return '#2ec9bc';
+    case 5:
+      return '#32b7ec';
+    case 4:
+      return '#e6c62c';
+    case 3:
+      return '#f8ae37';
+    case 2:
+      return '#bf4f18';
+    case 1:
+      return '#bf4f18';
+    }
+  }};
+  `,
+  ListingConditionFiller: styled.div`
+    display: inline-block;
+    background-color: #ececec;
+    margin-left: 2px;
+    width: 4px;
+    height: 3px;
   `,
   CarouselImg: styled.img`
     object-fit: cover;
