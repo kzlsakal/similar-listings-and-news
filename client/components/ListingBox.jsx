@@ -1,10 +1,42 @@
 import React from 'react';
 import Styles from './../styles.jsx';
+import SmallCarousel from './SmallCarousel.jsx';
+const ORIGIN = document.location.origin;
+
+const priceFormatter = num => {
+  if (num % 1 !== 0) {
+    num = num.toFixed(2);
+  }
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+};
+
 const ListingBox = (props) => {
+  let oldPrice = null;
+  let actualPrice = `$${priceFormatter(props.listing.priceOriginal)}`;
+  if (props.listing.priceDiscounted) {
+    oldPrice = `$${priceFormatter(props.listing.priceOriginal)}`;
+    actualPrice = `$${priceFormatter(props.listing.priceDiscounted)}`;
+  }
   return (
-    <Styles.BoxWrapper>
-      {props.listing.name}
-    </Styles.BoxWrapper>
+    <a href={`${ORIGIN}/item/${props.listing.itemId}`}>
+      <Styles.BoxWrapper>
+        <SmallCarousel images={props.listing.photosSmall} />
+        <Styles.ListingInfo>
+          <Styles.ListingHeader>
+            {props.listing.name}
+          </Styles.ListingHeader>
+          <Styles.ListingDiscountedPrice>
+            {oldPrice || ''}
+          </Styles.ListingDiscountedPrice>
+          <Styles.ListingActualPrice>
+            {actualPrice}
+          </Styles.ListingActualPrice>
+          <Styles.ListingCondition>
+            {props.listing.condition}
+          </Styles.ListingCondition>
+        </Styles.ListingInfo>
+      </Styles.BoxWrapper>
+    </a>
   );
 };
 

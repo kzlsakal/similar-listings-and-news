@@ -35,7 +35,7 @@ const Styles = {
     }
     #sln {
     box-sizing: border-box;
-    max-width: 1320px;
+    max-width: 1300px;
     margin-left: auto;
     margin-right: auto;
     font-family: Lato, system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
@@ -49,6 +49,9 @@ const Styles = {
     font-weight: 400;
     margin: 0 2em;
     }
+    #sln a {
+      text-decoration: none;
+    }
   `,
   ListingsRow: styled.div`
   display: flex;
@@ -57,15 +60,58 @@ const Styles = {
     overflow-x: auto;
     overflow-y: hidden;
     padding: 0.3em 0;
-    div:first-of-type {
+    a:first-of-type {
       margin-left: 2.9em;
     }
   `,
   BoxWrapper: styled.div`
     border: .01em solid #e4e4e4;
+    color: #414141;
     cursor: pointer;
-    margin: 0 .9em;
+    display: grid;
+    font-weight: 700;
+    grid-template-rows: 2fr 1fr;
+    margin-right: 1.8em;
+    &:hover {
+      box-shadow: 0 .1em .7em 0 rgba(33,33,33,.15);
+      transition: box-shadow .1s ease-in-out;
+    }
+  `,
+  ListingInfo: styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 35px 45px 25px;
+  `,
+  ListingHeader: styled.div`
+    grid-column: 1/3;
+    padding: .2em .3em;
+  `,
+  ListingDiscountedPrice: styled.div`
+    align-self: flex-end;
+    display: block;
+    font-size: .8em;
+    font-weight: 400;
+    grid-column: 1/3;
+    opacity: .6;
+    padding: 0 .3em;
+    text-decoration: line-through;
+  `,
+  ListingActualPrice: styled.div`
+    align-self: flex-end;
+    font-size: 1.15em;
+    padding: 0 .3em;
+  `,
+  ListingCondition: styled.div`
+    align-self: flex-end;
+    text-align: right;
+    padding: 0 .3em;
+  `,
+  CarouselImg: styled.img`
+    object-fit: cover;
+    width: 210px;
+    height: 210px;
   `
+
 };
 
 export default Styles;
