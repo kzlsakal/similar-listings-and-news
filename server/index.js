@@ -1,5 +1,5 @@
 const path = require('path');
-const db = require('./db');
+const models = require('./models');
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3005;
@@ -21,7 +21,7 @@ app.get('/api/item/:id', (req, res) => {
     itemId = req.params.id.slice(0, idEndIndex);
   }
 
-  db.getListingById(Number(itemId))
+  models.Listing.getById(Number(itemId))
     .then(results => {
       if (!results.length) {
         res.status(404).end('404 - Listing was not found');
@@ -39,7 +39,7 @@ app.get('/api/item/:id', (req, res) => {
 // Handle GET requests for listings under a category
 app.get('/api/listings/:category', (req, res) => {
   const category = req.params.category;
-  db.getListings({category})
+  models.Listing.get({category})
     .then(results => {
       if (!results.length) {
         res.status(404).end('404 - Category was not found');
