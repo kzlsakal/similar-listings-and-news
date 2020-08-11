@@ -12,7 +12,7 @@ if (process.argv.slice(2)[0]) {
   generateAmount = Number(process.argv.slice(2)[0].split('=')[1]);
 }
 
-// Generate articles in the amount of 1/5 of listings, with a minimum of 10.
+// Generate articles in the amount of 1/5 of listings, minimum 10.
 generateArticleAmount = Math.max(generateAmount / 5, 10);
 
 mongoose.connect(process.env.MONGODB_URL || DEFAULT_DB_URL, {
@@ -134,10 +134,15 @@ let articleSequence = 1;
 const generateRandomArticle = () => {
   const randomTag = articleTags[Math.floor(Math.random() * articleTags.length)];
   const randomType = articleTypes[Math.floor(Math.random() * articleTags.length)];
+  let randomNoun = faker.fake('{{company.catchPhraseNoun}}');
+  const randomNounWords = randomNoun.split(' ').map(
+    word => word[0].toUpperCase() + word.slice(1)
+  );
+  randomNoun = randomNounWords.join(' ');
   const randomArticle = {
     author: faker.fake('{{name.firstName}} {{name.firstName}}'),
     title: faker.fake(
-      `{{company.catchPhraseAdjective}} ${randomTag} {{company.catchPhraseNoun}}`
+      `{{company.catchPhraseAdjective}} ${randomTag} ${randomNoun}`
     ),
     tags: [randomTag],
     type: randomType,
@@ -147,6 +152,10 @@ const generateRandomArticle = () => {
     published: new Date()
   };
   articleSequence++;
+  // Limit article sequence to generate max 30 image URLs
+  if (articleSequence > 30) {
+    articleSequence = 1;
+  }
   return randomArticle;
 };
 
