@@ -55,9 +55,9 @@ const Styles = {
     }
   `,
   ListingsRow: styled.div`
-  display: flex;
+    display: flex;
     flex-wrap: nowrap;
-    min-width: 60em;
+    min-width: 50em;
     overflow-x: auto;
     overflow-y: hidden;
     padding: 0.3em 2.9em;
