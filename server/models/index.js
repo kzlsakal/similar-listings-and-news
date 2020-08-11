@@ -1,3 +1,4 @@
 const Listing = require('./Listing');
+const Article = require('./Article');
 
-module.exports = { Listing };
+module.exports = { Listing, Article };

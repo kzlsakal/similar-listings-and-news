@@ -21,7 +21,7 @@ listingSchema.plugin(AutoIncrement, {inc_field: 'itemId', start_seq: 0});
 const Listing = db.model('Listing', listingSchema);
 
 const add = (...listings) => {
-  return Listing.create(...listings).exec();
+  return Listing.create(...listings);
 };
 
 const get = (options = {}, limit = 25) => {

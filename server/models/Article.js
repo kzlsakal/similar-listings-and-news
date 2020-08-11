@@ -15,15 +15,15 @@ const articleSchema = new Schema({
 const Article = db.model('Article', articleSchema);
 
 const add = (...listings) => {
-  return Article.create(...listings).exec();
+  return Article.create(...listings);
 };
 
 const get = (options = {}, limit = 25) => {
   return Article.find(options).limit(limit).exec();
 };
 
-const getByTag = (...tags) => {
-  return Article.find({tag: {$in: [...tags]}}).exec();
+const getByTag = (tags) => {
+  return Article.find({tags: {$in: tags}}).exec();
 };
 
 module.exports = {

@@ -25,6 +25,7 @@ app.get('/api/item/:id', (req, res) => {
     .then(results => {
       if (!results.length) {
         res.status(404).end('404 - Listing was not found');
+        return;
       }
       const listing = results[0];
       // Add the Cloud Provider URL in front of each file name
@@ -43,12 +44,32 @@ app.get('/api/listings/:category', (req, res) => {
     .then(results => {
       if (!results.length) {
         res.status(404).end('404 - Category was not found');
+        return;
       }
       results.forEach(listing => {
         // Add the Cloud Provider URL in front of each file name
         listing.photosSmall = listing.photosSmall.map(fileName => {
           return `${CLOUD_IMG_URL}/${listing.itemId}/${fileName}`;
         });
+      });
+      res.json(results).end();
+    })
+    .catch(err => res.status(500).end('There was an error'));
+});
+
+// Handle GET requests for news articles with tags
+app.get('/api/news/:tags', (req, res) => {
+  const tags = req.params.tags.split(',');
+  models.Article.getByTag(tags)
+    .then(results => {
+      if (!results.length) {
+        res.status(404).end('404 - No articles found');
+        return;
+      }
+      results.forEach(article => {
+        // Add the Cloud Provider URL in front of each file name
+        article.imageSmall = `${CLOUD_IMG_URL}/articles/${article.imageSmall}`;
+        article.imageFull = `${CLOUD_IMG_URL}/articles/${article.imageFull}`;
       });
       res.json(results).end();
     })
