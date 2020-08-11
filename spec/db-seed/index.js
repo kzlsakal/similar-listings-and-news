@@ -36,7 +36,8 @@ const generateRandomListing = () => {
     name: faker.fake('{{commerce.productName}}') + ' Guitar',
     brand: faker.fake('{{company.companyName}}'),
     style: faker.fake('{{commerce.productAdjective}}'),
-    priceOriginal: Number(faker.fake('{{commerce.price}}')).toFixed(2)
+    // Get 9 times of the Faker prices since guitars are expensive
+    priceOriginal: Number(faker.fake('{{commerce.price}}') * 9).toFixed(2)
   };
   // Add a discounted price for the guitar
   const isDiscounted = Math.random() < 0.5 ? true : false;

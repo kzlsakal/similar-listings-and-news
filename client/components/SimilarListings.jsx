@@ -8,7 +8,7 @@ const SimilarListings = (props) => {
       <h2>Similar Listings</h2>
       <Styles.ListingsRow>
         {props.listings.map(
-          (listing, idx) => <ListingBox listing={listing} key={idx}/>
+          (listing, idx) => <ListingBox listing={listing} key={idx} />
         )}
       </Styles.ListingsRow>
     </div>
