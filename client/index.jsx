@@ -3,16 +3,19 @@ import ReactDOM from 'react-dom';
 import Styles from './styles.jsx';
 import SimilarListings from './components/SimilarListings.jsx';
 import RelatedNews from './components/RelatedNews.jsx';
+import ArticleView from './components/ArticleView.jsx';
 const ORIGIN = document.location.origin;
 const PATH = document.location.pathname.slice(1);
 
 class SlnWrapper extends Component {
   constructor(props) {
     super(props);
+    this.toggleArticle = this.toggleArticle.bind(this);
     this.state = {
       listing: {},
       similarListings: [],
-      relatedNews: []
+      relatedNews: [],
+      readingArticle: null
     };
   }
 
@@ -53,12 +56,24 @@ class SlnWrapper extends Component {
       .catch(err => null);
   }
 
+  toggleArticle (idx) {
+    if (idx === -1) {
+      this.setState({readingArticle: null});
+      return;
+    }
+    this.setState({readingArticle: this.state.relatedNews[idx]});
+  }
+
   render () {
     return (
       <div>
         <Styles.Global />
         <SimilarListings listings={this.state.similarListings} />
-        <RelatedNews articles={this.state.relatedNews}/>
+        <RelatedNews
+          articles={this.state.relatedNews}
+          onReadArticle={this.toggleArticle}
+        />
+        <ArticleView article={this.state.readingArticle} onToggleRead={this.toggleArticle}/>
       </div>
     );
   }

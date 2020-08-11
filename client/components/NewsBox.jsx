@@ -10,7 +10,7 @@ const Styles = {
       box-shadow: 0 .1em .2em 0 rgba(33,33,33,.15);
       color: #f6870f;
       transition: box-shadow .1s ease-in-out;
-    },
+    }
   `,
   Image: styled.img`
     display: block;
@@ -36,8 +36,12 @@ const Styles = {
 };
 
 const NewsBox = (props) => {
+  const handleClick = () => {
+    props.onReadArticle(props.idx);
+  };
+
   return (
-    <Styles.ArticleBox>
+    <Styles.ArticleBox onClick={handleClick}>
       <Styles.Image src={props.article.imageSmall} />
       <Styles.Title> {props.article.title} </Styles.Title>
       <Styles.Type> {props.article.type} </Styles.Type>

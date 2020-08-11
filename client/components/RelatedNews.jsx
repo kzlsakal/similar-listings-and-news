@@ -23,7 +23,12 @@ const RelatedNews = (props) => {
       <h2>ReBurke News</h2>
       <Styles.NewsRow>
         {props.articles.map((article, idx) => (
-          <NewsBox article={article} key={`article-${idx}`}/>
+          <NewsBox
+            article={article}
+            key={`article-${idx}`}
+            idx={idx}
+            onReadArticle={props.onReadArticle}
+          />
         ))}
       </Styles.NewsRow>
     </Styles.NewsWrapper>
