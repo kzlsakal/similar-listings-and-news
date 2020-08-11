@@ -22,8 +22,8 @@ const get = (options = {}, limit = 25) => {
   return Article.find(options).limit(limit).exec();
 };
 
-const getByTag = (tags) => {
-  return Article.find({tags: {$in: tags}}).exec();
+const getByTag = (tags, limit = 3) => {
+  return Article.find({tags: {$in: tags}}).limit(limit).exec();
 };
 
 module.exports = {
