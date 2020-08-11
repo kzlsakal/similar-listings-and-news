@@ -37,6 +37,7 @@ class SlnWrapper extends Component {
   getSimilarListings (category = this.state.listing.category) {
     return fetch(`${ORIGIN}/api/listings/${category}`)
       .then(res => res.json())
+      .then(res => res.slice(0, 25))
       .then(similarListings => this.setState({similarListings}))
       .catch(err => null);
   }
@@ -47,6 +48,7 @@ class SlnWrapper extends Component {
   ]) {
     return fetch(`${ORIGIN}/api/news/${tags.join(',')}`)
       .then(res => res.json())
+      .then(res => res.slice(0, 3))
       .then(relatedNews => this.setState({relatedNews}))
       .catch(err => null);
   }
