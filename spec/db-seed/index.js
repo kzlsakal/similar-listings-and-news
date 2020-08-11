@@ -5,6 +5,16 @@ const faker = require('faker');
 const DEFAULT_DB_URL = 'mongodb://localhost/reburke-sln';
 mongoose.Promise = Promise;
 
+// Get the desired amount of generated listings argument from the node command
+let generateAmount = 101;
+if (process.argv.slice(2)[0]) {
+  // If the amount argument is provided via npm set the desired amount
+  generateAmount = Number(process.argv.slice(2)[0].split('=')[1]);
+}
+
+// Generate articles in the amount of 1/5 of listings, with a minimum of 10.
+generateArticleAmount = Math.max(generateAmount / 5, 10);
+
 mongoose.connect(process.env.MONGODB_URL || DEFAULT_DB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -12,6 +22,10 @@ mongoose.connect(process.env.MONGODB_URL || DEFAULT_DB_URL, {
   useCreateIndex: true
 });
 const Schema = mongoose.Schema;
+
+/**********************
+ * Listing Schema
+ */
 
 // Define the schema for a listing
 const listingSchema = new Schema({
@@ -25,6 +39,17 @@ const listingSchema = new Schema({
   condition: {type: Number, min: 1, max: 9},
   photosSmall: [String],
 });
+
+// Activate auto-incrementing for the itemId property
+// eslint-disable-next-line camelcase
+listingSchema.plugin(AutoIncrement, {inc_field: 'itemId', start_seq: 0});
+
+// Define the model based on the listing schema
+const Listing = mongoose.model('Listing', listingSchema);
+
+/**********************
+ * Listing Generation
+ */
 
 // Predefine the select guitar categories for mocked data
 const guitarCategories = ['Acoustic', 'Bass', 'Electric'];
@@ -68,22 +93,75 @@ const generateBulkListings = (amount) => {
   return generatedListings.map(() => generateRandomListing());
 };
 
-// Get the desired amount of generated listings argument from the node command
-let generateAmount = 101;
-if (process.argv.slice(2)[0]) {
-  // If the amount argument is provided via npm set the desired amount
-  generateAmount = Number(process.argv.slice(2)[0].split('=')[1]);
-}
-
 // Create a bulk of new listings for the desired amount
 const newListings = generateBulkListings(generateAmount);
 
-// Activate auto-incrementing for the itemId property
-// eslint-disable-next-line camelcase
-listingSchema.plugin(AutoIncrement, {inc_field: 'itemId', start_seq: 0});
+/**********************
+ * Article Schema
+ */
 
-// Define the model based on the listing schema
-const Listing = mongoose.model('Listing', listingSchema);
+const articleSchema = new Schema({
+  author: String,
+  title: String,
+  tags: [String],
+  type: String,
+  imageSmall: String,
+  imageFull: String,
+  content: String,
+  published: Date
+});
+
+const Article = mongoose.model('Article', articleSchema);
+
+/**********************
+ * Article Generation
+ */
+
+// Predefine the select article tags for mocked data
+const articleTags = ['Acoustic', 'Bass', 'Electric'];
+// Predefine the select article types for mocked data
+const articleTypes = [
+  'interviews',
+  'news and reviews',
+  'tone report',
+  'gear history',
+  'demos'
+];
+// Keep the sequence to correctly mock the image URLs
+let articleSequence = 1;
+
+// Helper function to generate a single random article
+const generateRandomArticle = () => {
+  const randomTag = articleTags[Math.floor(Math.random() * articleTags.length)];
+  const randomType = articleTypes[Math.floor(Math.random() * articleTags.length)];
+  const randomArticle = {
+    author: faker.fake('{{name.firstName}} {{name.firstName}}'),
+    title: faker.fake(
+      `{{company.catchPhraseAdjective}} ${randomTag} {{company.catchPhraseNoun}}`
+    ),
+    tags: [randomTag],
+    type: randomType,
+    imageSmall: `small (${articleSequence}).jpg`,
+    imageFull: `full (${articleSequence}).jpg`,
+    content: faker.fake('{{lorem.paragraphs}}'),
+    published: new Date()
+  };
+  articleSequence++;
+  return randomArticle;
+};
+
+// Helper function to generate random articles for the desired amount
+const generateBulkArticles = (amount) => {
+  const generatedArticles = Array(amount).fill(0);
+  return generatedArticles.map(() => generateRandomArticle());
+};
+
+// Create a bulk of new listings for the desired amount
+const newArticles = generateBulkArticles(generateArticleAmount);
+
+/**********************
+ * Database seeding
+ */
 
 // Reset the unique itemId counter for the listing
 Listing.counterReset('itemId', (err) => {
@@ -95,13 +173,23 @@ Listing.counterReset('itemId', (err) => {
 
 // Truncate the existing listings collection
 Listing.deleteMany({})
-  .then((result) => {
-    console.log(`2) Deleted ${result.deletedCount} items from the collection.`);
+  .then(result => {
+    console.log(`2) Deleted ${result.deletedCount} listings from the collection.`);
+    // Truncate the existing articles collection
+    return Article.deleteMany({});
+  })
+  .then(result => {
+    console.log(`3) Deleted ${result.deletedCount} articles from the collection.`);
     // Add the randomly generated listings to the database
     return Listing.create(...newListings);
   })
-  .then((results) => {
-    console.log(`3) Added ${results.length} randomly generated items.`);
+  .then(results => {
+    console.log(`4) Added ${results.length} randomly generated listings.`);
+    // Add the randomly generated articles to the database
+    return Article.create(...newArticles);
+  })
+  .then(results => {
+    console.log(`5) Added ${results.length} randomly generated listings.`);
     const lengthOfProcess = new Date() - startOfProcess;
     console.log(`Process completed in ${lengthOfProcess} ms.`);
     mongoose.disconnect((err) => {
@@ -111,7 +199,7 @@ Listing.deleteMany({})
       process.exit();
     });
   })
-  .catch((err) => {
+  .catch(err => {
     throw err;
     mongoose.disconnect((err) => {
       if (err) {
