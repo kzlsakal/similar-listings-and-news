@@ -37,16 +37,16 @@ const Carousel = {
   `,
   Prev: styled.div`
     align-items: center;
+    background: linear-gradient(90deg, rgba(0,0,0,.4) 0%, rgba(0,0,0,.01) 100%);
     color: #fff;
     display: flex;
-    font-family: auto;
+    font-family: serif;
     font-size: 36px;
     font-weight: 400;
     height: 100%;
     justify-content: flex-start;
     padding: 4% 3%;
     width: 30px;
-    background: linear-gradient(90deg, rgba(0,0,0,.4) 0%, rgba(0,0,0,.01) 100%);
     opacity: 0;
     position: absolute;
     text-decoration: none;
@@ -62,7 +62,7 @@ const Carousel = {
     background: linear-gradient(90deg, rgba(0,0,0,.01) 0%, rgba(0,0,0,.4) 100%);
     color: #fff;
     display: flex;
-    font-family: auto;
+    font-family: serif;
     font-size: 36px;
     font-weight: 400;
     height: 100%;
@@ -87,21 +87,60 @@ class SmallCarousel extends Component {
     super(props);
     this.handlePrev = this.handlePrev.bind(this);
     this.handleNext = this.handleNext.bind(this);
-    this.state = {
-      slideDeck: this.props.images
-    };
+    this.ulId = `img-ul-${this.props.preKey}`;
+    this.listIds = Array(this.props.images.length).fill(0).map((image, idx) => {
+      return `img-li-${this.props.preKey}-${idx}`;
+    });
   }
 
   handlePrev () {
-    const newSlideDeck = this.state.slideDeck;
-    newSlideDeck.unshift(newSlideDeck.pop());
-    this.setState({slideDeck: newSlideDeck});
+    const lastListId = this.listIds.pop();
+    this.listIds.unshift(lastListId);
+    const lastElement = document.getElementById(lastListId);
+    const newFirstElement = lastElement.cloneNode(true);
+    const ul = document.getElementById(this.ulId);
+    ul.prepend(newFirstElement);
+    newFirstElement.animate([
+      {width: '0'},
+      {width: '210px'}
+    ], {
+      duration: 500,
+    });
+    lastElement.animate([
+      {width: '210px'},
+      {width: '0'}
+    ], {
+      duration: 500,
+    });
+    setTimeout(() => {
+      ul.removeChild(lastElement);
+      // 15ms grace period for possible UI lagging
+    }, 515);
   }
 
   handleNext () {
-    const newSlideDeck = this.state.slideDeck;
-    newSlideDeck.push(newSlideDeck.shift());
-    this.setState({slideDeck: newSlideDeck});
+    const firstListId = this.listIds.shift();
+    this.listIds.push(firstListId);
+    const firstElement = document.getElementById(firstListId);
+    const newLastElement = firstElement.cloneNode(true);
+    const ul = document.getElementById(this.ulId);
+    ul.append(newLastElement);
+    newLastElement.animate([
+      {width: '0'},
+      {width: '210px'}
+    ], {
+      duration: 500,
+    });
+    firstElement.animate([
+      {width: '210px'},
+      {width: '0'}
+    ], {
+      duration: 500,
+    });
+    setTimeout(() => {
+      ul.removeChild(firstElement);
+      // 15ms grace period for possible UI lagging
+    }, 485);
   }
 
   render () {
@@ -109,15 +148,22 @@ class SmallCarousel extends Component {
       <Carousel.Wrapper>
         <Carousel.Prev onClick={this.handlePrev}>&lt;</Carousel.Prev>
         <Carousel.Next onClick={this.handleNext}>&gt;</Carousel.Next>
-        <Carousel.Ul imageCount={this.props.images.length}>
-          {Array(this.props.images.length).fill(0).map((image, idx) => {
-            return (
-              <Carousel.Li key={`img-li-${this.props.preKey}-${idx}`}>
-                <Carousel.Image src={this.props.images[idx]} />
-              </Carousel.Li>);
-          })}
-
-        </Carousel.Ul>
+        <a href={this.props.link}>
+          <Carousel.Ul
+            imageCount={this.props.images.length}
+            id={`img-ul-${this.props.preKey}`}
+          >
+            {Array(this.props.images.length).fill(0).map((image, idx) => {
+              return (
+                <Carousel.Li
+                  key={`img-li-${this.props.preKey}-${idx}`}
+                  id={`img-li-${this.props.preKey}-${idx}`}
+                >
+                  <Carousel.Image src={this.props.images[idx]} />
+                </Carousel.Li>);
+            })}
+          </Carousel.Ul>
+        </a>
       </Carousel.Wrapper>
     );
   }

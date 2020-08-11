@@ -51,6 +51,7 @@ const Styles = {
     }
     #sln a {
       text-decoration: none;
+      color: #414141;
     }
   `,
   ListingsRow: styled.div`
@@ -59,10 +60,7 @@ const Styles = {
     min-width: 60em;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 0.3em 0;
-    a:first-of-type {
-      margin-left: 2.9em;
-    }
+    padding: 0.3em 2.9em;
   `,
   BoxWrapper: styled.div`
     border: .01em solid #e4e4e4;

@@ -18,25 +18,30 @@ const ListingBox = (props) => {
     oldPrice = `$${priceFormatter(props.listing.priceOriginal)}`;
     actualPrice = `$${priceFormatter(props.listing.priceDiscounted)}`;
   }
-  //<a href={`${ORIGIN}/item/${props.listing.itemId}`}>
+  const link = `${ORIGIN}/item/${props.listing.itemId}`;
   return (
     <Styles.BoxWrapper>
-      <SmallCarousel images={props.listing.photosSmall} preKey={props.listing.itemId} />
-      <Styles.ListingInfo>
-        <Styles.ListingHeader>
-          {props.listing.name}
-        </Styles.ListingHeader>
-        <Styles.ListingDiscountedPrice>
-          {oldPrice || ''}
-        </Styles.ListingDiscountedPrice>
-        <Styles.ListingActualPrice>
-          {actualPrice}
-        </Styles.ListingActualPrice>
-        <ConditionIndicator condition={props.listing.condition}/>
-      </Styles.ListingInfo>
+      <SmallCarousel
+        images={props.listing.photosSmall}
+        preKey={props.listing.itemId}
+        link={`${ORIGIN}/item/${props.listing.itemId}`}
+      />
+      <a href={`${ORIGIN}/item/${props.listing.itemId}`}>
+        <Styles.ListingInfo>
+          <Styles.ListingHeader>
+            {props.listing.name}
+          </Styles.ListingHeader>
+          <Styles.ListingDiscountedPrice>
+            {oldPrice || ''}
+          </Styles.ListingDiscountedPrice>
+          <Styles.ListingActualPrice>
+            {actualPrice}
+          </Styles.ListingActualPrice>
+          <ConditionIndicator condition={props.listing.condition}/>
+        </Styles.ListingInfo>
+      </a>
     </Styles.BoxWrapper>
   );
-  //</a>
 };
 
 export default ListingBox;
