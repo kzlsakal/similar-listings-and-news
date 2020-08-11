@@ -1,7 +1,71 @@
 import React from 'react';
-import Styles from './../styles.jsx';
+import styled from 'styled-components';
 
 const barMax = 8;
+
+const Styles = {
+  ListingCondition: styled.div`
+    align-self: flex-end;
+    font-size: .7em;
+    line-height: .7em;
+    margin-right: .7em;
+    margin-bottom: .7em;
+    text-align: right;
+    color: ${props => {
+    switch (props.barCount) {
+    case 8:
+      return '#30c966';
+    case 7:
+      return '#30c966';
+    case 6:
+      return '#2ec9bc';
+    case 5:
+      return '#32b7ec';
+    case 4:
+      return '#e6c62c';
+    case 3:
+      return '#f8ae37';
+    case 2:
+      return '#bf4f18';
+    case 1:
+      return '#bf4f18';
+    }
+  }};
+  `,
+  ListingConditionBar: styled.div`
+    display: inline-block;
+    margin-left: 2px;
+    width: 4px;
+    height: 3px;
+    background-color: ${props => {
+    switch (props.barCount) {
+    case 8:
+      return '#30c966';
+    case 7:
+      return '#30c966';
+    case 6:
+      return '#2ec9bc';
+    case 5:
+      return '#32b7ec';
+    case 4:
+      return '#e6c62c';
+    case 3:
+      return '#f8ae37';
+    case 2:
+      return '#bf4f18';
+    case 1:
+      return '#bf4f18';
+    }
+  }};
+  `,
+  ListingConditionFiller: styled.div`
+    display: inline-block;
+    background-color: #ececec;
+    margin-left: 2px;
+    width: 4px;
+    height: 3px;
+  `
+};
 
 const ConditionIndicator = (props) => {
   let conditionText;
