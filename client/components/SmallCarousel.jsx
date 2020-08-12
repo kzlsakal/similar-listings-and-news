@@ -8,6 +8,11 @@ const Carousel = {
     margin: 0;
     width: 210px;
     height: 210px;
+
+    &:hover > div {
+      opacity: 1;
+      transition: all .2s ease;
+    }
   `,
   Ul: styled.ul`
     position: relative;
@@ -52,10 +57,6 @@ const Carousel = {
     text-decoration: none;
     user-select: none;
     z-index: 999;
-    &:hover {
-      opacity: 1;
-      transition: all .2s ease;
-    }
   `,
   Next: styled.div`
     align-items: center;
@@ -75,10 +76,6 @@ const Carousel = {
     text-decoration: none;
     user-select: none;
     z-index: 999;
-    &:hover {
-      opacity: 1;
-      transition: all .2s ease;
-    }
   `
 };
 
