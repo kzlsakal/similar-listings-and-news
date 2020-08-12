@@ -168,7 +168,8 @@ const ArticleView = (props) => {
     const targetId = event.target.id;
     if (targetId === 'sln-modal-bg' || targetId === 'sln-modal-close') {
       props.onToggleRead(-1);
-    } else if (
+    }
+    if (
       targetId === 'sln-modal-next-content'
       || targetId === 'sln-modal-excerpt'
       || targetId === 'sln-modal-next-image'

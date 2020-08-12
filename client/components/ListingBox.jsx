@@ -64,6 +64,8 @@ const ListingBox = (props) => {
     <Styles.BoxWrapper>
       <SmallCarousel
         images={props.listing.photosSmall}
+        priceOriginal={props.listing.priceOriginal}
+        priceDiscounted={props.listing.priceDiscounted}
         preKey={props.listing.itemId}
         link={`${ORIGIN}/item/${props.listing.itemId}`}
       />

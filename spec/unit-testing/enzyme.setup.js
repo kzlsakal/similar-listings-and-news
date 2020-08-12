@@ -18,3 +18,7 @@ global.fetch = jest.fn((input) => {
   }
   return Promise.resolve(listingMock);
 });
+
+global.setTimeout = (func) => {
+  func();
+};
