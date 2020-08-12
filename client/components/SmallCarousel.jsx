@@ -95,18 +95,32 @@ class SmallCarousel extends Component {
     super(props);
     this.handlePrev = this.handlePrev.bind(this);
     this.handleNext = this.handleNext.bind(this);
-    this.ulId = `sln-img-ul-${this.props.preKey}`;
-    this.listIds = Array(this.props.images.length).fill(0).map((image, idx) => {
+    this.state = {
+      ulId: '',
+      listIds: []
+    };
+  }
+
+  componentDidMount () {
+    const listIds = Array(this.props.images.length).fill(0).map((image, idx) => {
       return `sln-img-li-${this.props.preKey}-${idx}`;
+    });
+    // Place last item to left end because the carousel will display first photo
+    listIds.unshift(listIds.pop());
+    this.setState({
+      ulId: `sln-img-ul-${this.props.preKey}`,
+      listIds
     });
   }
 
   handlePrev () {
-    const lastListId = this.listIds.pop();
-    this.listIds.unshift(lastListId);
+    const listIds = this.state.listIds.slice();
+    const lastListId = listIds.pop();
+    listIds.unshift(lastListId);
+    this.setState({listIds});
     const lastElement = document.getElementById(lastListId);
     const newFirstElement = lastElement.cloneNode(true);
-    const ul = document.getElementById(this.ulId);
+    const ul = document.getElementById(this.state.ulId);
     ul.prepend(newFirstElement);
     newFirstElement.animate([
       {width: '0'},
@@ -127,11 +141,13 @@ class SmallCarousel extends Component {
   }
 
   handleNext () {
-    const firstListId = this.listIds.shift();
-    this.listIds.push(firstListId);
+    const listIds = this.state.listIds.slice();
+    const firstListId = listIds.shift();
+    listIds.push(firstListId);
+    this.setState({listIds});
     const firstElement = document.getElementById(firstListId);
     const newLastElement = firstElement.cloneNode(true);
-    const ul = document.getElementById(this.ulId);
+    const ul = document.getElementById(this.state.ulId);
     ul.append(newLastElement);
     newLastElement.animate([
       {width: '0'},
@@ -162,6 +178,21 @@ class SmallCarousel extends Component {
         <Carousel.PriceDrop> {`${discount}% price drop`} </Carousel.PriceDrop>
       );
     }
+
+    const images = (
+      Array(this.props.images.length).fill(0).map((image, idx) => {
+        return (
+          <Carousel.Li
+            key={`sln-img-li-${this.props.preKey}-${idx}`}
+            id={`sln-img-li-${this.props.preKey}-${idx}`}
+          >
+            <Carousel.Image src={this.props.images[idx]} />
+          </Carousel.Li>);
+      })
+    );
+    // Place the last item to the left end so the carousel displays first photo
+    images.unshift(images.pop());
+
     return (
       <Carousel.Wrapper>
         <Carousel.Prev onClick={this.handlePrev}>&lt;</Carousel.Prev>
@@ -171,15 +202,7 @@ class SmallCarousel extends Component {
             imageCount={this.props.images.length}
             id={`sln-img-ul-${this.props.preKey}`}
           >
-            {Array(this.props.images.length).fill(0).map((image, idx) => {
-              return (
-                <Carousel.Li
-                  key={`sln-img-li-${this.props.preKey}-${idx}`}
-                  id={`sln-img-li-${this.props.preKey}-${idx}`}
-                >
-                  <Carousel.Image src={this.props.images[idx]} />
-                </Carousel.Li>);
-            })}
+            {images}
           </Carousel.Ul>
           {priceDropIndicator}
         </a>
