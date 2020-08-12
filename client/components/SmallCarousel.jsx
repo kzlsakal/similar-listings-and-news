@@ -87,9 +87,9 @@ class SmallCarousel extends Component {
     super(props);
     this.handlePrev = this.handlePrev.bind(this);
     this.handleNext = this.handleNext.bind(this);
-    this.ulId = `img-ul-${this.props.preKey}`;
+    this.ulId = `sln-img-ul-${this.props.preKey}`;
     this.listIds = Array(this.props.images.length).fill(0).map((image, idx) => {
-      return `img-li-${this.props.preKey}-${idx}`;
+      return `sln-img-li-${this.props.preKey}-${idx}`;
     });
   }
 
@@ -151,13 +151,13 @@ class SmallCarousel extends Component {
         <a href={this.props.link}>
           <Carousel.Ul
             imageCount={this.props.images.length}
-            id={`img-ul-${this.props.preKey}`}
+            id={`sln-img-ul-${this.props.preKey}`}
           >
             {Array(this.props.images.length).fill(0).map((image, idx) => {
               return (
                 <Carousel.Li
-                  key={`img-li-${this.props.preKey}-${idx}`}
-                  id={`img-li-${this.props.preKey}-${idx}`}
+                  key={`sln-img-li-${this.props.preKey}-${idx}`}
+                  id={`sln-img-li-${this.props.preKey}-${idx}`}
                 >
                   <Carousel.Image src={this.props.images[idx]} />
                 </Carousel.Li>);

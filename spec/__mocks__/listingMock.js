@@ -12,7 +12,7 @@ response.data = {
   'style': 'Refined',
   'priceOriginal': 959,
   'priceDiscounted': 776.79,
-  'category': 'Acoustic',
+  'category': 'Bass',
   'condition': 5,
   'itemId': 30,
   '__v': 0

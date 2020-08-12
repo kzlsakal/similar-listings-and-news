@@ -29,8 +29,10 @@ app.get('/api/item/:id', (req, res) => {
       }
       const listing = results[0];
       // Add the Cloud Provider URL in front of each file name
+      // DEV: Return id calls with a max-limit of 101 while using mock images
+      const itemId = listing.itemId % 101;
       listing.photosSmall = listing.photosSmall.map(fileName => {
-        return `${CLOUD_IMG_URL}/${listing.itemId}/${fileName}`;
+        return `${CLOUD_IMG_URL}/${itemId}/${fileName}`;
       });
       res.json(listing).end();
     })
@@ -48,8 +50,10 @@ app.get('/api/listings/:category', (req, res) => {
       }
       results.forEach(listing => {
         // Add the Cloud Provider URL in front of each file name
+        // DEV: Return id calls with a max-limit of 101 while using mock images
+        const itemId = listing.itemId % 101;
         listing.photosSmall = listing.photosSmall.map(fileName => {
-          return `${CLOUD_IMG_URL}/${listing.itemId}/${fileName}`;
+          return `${CLOUD_IMG_URL}/${itemId}/${fileName}`;
         });
       });
       res.json(results).end();
