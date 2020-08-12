@@ -149,7 +149,8 @@ const generateRandomArticle = () => {
     imageSmall: `small (${articleSequence}).jpg`,
     imageFull: `full (${articleSequence}).jpg`,
     content: faker.fake('{{lorem.paragraphs}}'),
-    published: new Date()
+    // Get a random published date between now and 5 years ago
+    published: new Date() - Math.floor(Math.random() * 157680000000)
   };
   articleSequence++;
   // Limit article sequence to generate max 30 image URLs
