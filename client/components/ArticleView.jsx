@@ -58,7 +58,7 @@ const Styles = {
     user-select: none;
   `,
   Social: styled.div`
-    padding: 2em 1em;
+    padding: 2em 4em;
     text-align: right;
   `,
   SocialImage: styled.span`
@@ -81,7 +81,7 @@ const Styles = {
   PostInfo: styled.div`
     display: grid;
     grid-template-rows: 1fr 1fr;
-    padding: 1em 0 0 1em;
+    padding: 1em 0 0 4em;
   `,
   AuthorName: styled.span`
     cursor: pointer;
@@ -89,15 +89,58 @@ const Styles = {
     color: #f6870f;
   `,
   TypeInfo: styled.span`
+    cursor: pointer;
     font-weight: 700;
     letter-spacing: .08em;
-    text-transform: uppercase;
     font-style: normal;
+    text-transform: uppercase;
+    &:hover {
+      color: #f6870f;
+      transition: color .1s ease-in-out;
+    }
   `,
   Content: styled.div`
     padding: 3em;
     text-align: justify;
     white-space: pre-line;
+  `,
+  Line: styled.hr`
+    border: none;
+    margin: 1.5em 3em;
+    border-bottom: 1px solid #ececec;
+  `,
+  RelatedArticleHeader: styled.div`
+    font-size: .8em;
+    margin-top: 2em;
+  `,
+  NextArticle: styled.div`
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    &:hover {
+      color: #f6870f;
+      transition: color .1s ease-in-out;
+    }
+    user-select: none;
+  `,
+  NextArticleImage: styled.img`
+    display: block;
+    height: 7.5em;
+    object-fit: cover;
+    width: 100%;
+    &:hover {
+      opacity: .8;
+      transition: opacity .1s ease-in-out;
+    }
+  `,
+  NextArticleContent: styled.div`
+    margin: .5em 1em 0 1em;
+    padding-right: 5em;
+    `,
+  NextArticleExcerpt: styled.div`
+    font-size: .8em;
+    margin-bottom: 1.2em;
+    white-space: initial;
   `
 };
 
@@ -125,6 +168,12 @@ const ArticleView = (props) => {
     const targetId = event.target.id;
     if (targetId === 'sln-modal-bg' || targetId === 'sln-modal-close') {
       props.onToggleRead(-1);
+    } else if (
+      targetId === 'sln-modal-next-content'
+      || targetId === 'sln-modal-excerpt'
+      || targetId === 'sln-modal-next-image'
+    ) {
+      props.onToggleRead(props.nextId);
     }
   };
   const date = new Date(props.article.published);
@@ -160,6 +209,24 @@ const ArticleView = (props) => {
         </Styles.Info>
         <Styles.Content>
           {props.article.content}
+          <Styles.RelatedArticleHeader>
+            RELATED ARTICLE
+          </Styles.RelatedArticleHeader>
+          <Styles.Line />
+          <Styles.NextArticle onClick={handleToggleRead}>
+            <Styles.NextArticleImage
+              src={props.nextArticle.imageSmall}
+              id="sln-modal-next-image"
+            />
+            <Styles.NextArticleContent id="sln-modal-next-content">
+              {props.nextArticle.title} <br/>
+              <Styles.NextArticleExcerpt id="sln-modal-excerpt">
+                {props.nextArticle.content.slice(0, 140) + ' ...'} <br/>
+              </Styles.NextArticleExcerpt>
+              Read more &gt;&gt;
+            </Styles.NextArticleContent>
+          </Styles.NextArticle>
+          <Styles.Line />
         </Styles.Content>
       </Styles.ViewPort>
     </Styles.Modal>

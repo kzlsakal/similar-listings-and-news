@@ -15,7 +15,9 @@ class SlnWrapper extends Component {
       listing: {},
       similarListings: [],
       relatedNews: [],
-      readingArticle: null
+      readingArticle: null,
+      nextArticle: null,
+      nextId: null
     };
   }
 
@@ -58,10 +60,18 @@ class SlnWrapper extends Component {
 
   toggleArticle (idx) {
     if (idx === -1) {
-      this.setState({readingArticle: null});
+      this.setState({readingArticle: null, nextArticle: null, nextId: null});
       return;
     }
-    this.setState({readingArticle: this.state.relatedNews[idx]});
+    let nextId = idx + 1;
+    if (nextId >= this.state.relatedNews.length) {
+      nextId = 0;
+    }
+    this.setState({
+      nextId: nextId,
+      readingArticle: this.state.relatedNews[idx],
+      nextArticle: this.state.relatedNews[nextId]
+    });
   }
 
   render () {
@@ -73,7 +83,12 @@ class SlnWrapper extends Component {
           articles={this.state.relatedNews}
           onReadArticle={this.toggleArticle}
         />
-        <ArticleView article={this.state.readingArticle} onToggleRead={this.toggleArticle}/>
+        <ArticleView
+          article={this.state.readingArticle}
+          nextArticle={this.state.nextArticle}
+          nextId={this.state.nextId}
+          onToggleRead={this.toggleArticle}
+        />
       </div>
     );
   }
