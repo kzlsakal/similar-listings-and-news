@@ -176,15 +176,16 @@ const ArticleView = (props) => {
       props.onToggleRead(props.nextId);
     }
   };
+
   const date = new Date(props.article.published);
   const formattedDate = months[date.getMonth()]
     + ' '
     + date.getDate()
     + ', '
     + date.getFullYear();
+
   return (
     <Styles.Modal onClick={handleToggleRead} id="sln-modal-bg">
-
       <Styles.ViewPort>
         <Styles.Banner image={props.article.imageFull}>
           <Styles.CloseButton id="sln-modal-close">&times;</Styles.CloseButton>
