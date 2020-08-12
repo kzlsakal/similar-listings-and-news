@@ -102,7 +102,7 @@ class SmallCarousel extends Component {
     this.listIds = Array(this.props.images.length).fill(0).map((image, idx) => {
       return `sln-img-li-${this.props.preKey}-${idx}`;
     });
-    // Place last item to left end because the carousel will display first photo
+    // Place last item to left end because carousel will display first photo
     this.listIds.unshift(this.listIds.pop());
   }
 
