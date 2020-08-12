@@ -8,7 +8,6 @@ const Carousel = {
     margin: 0;
     width: 210px;
     height: 210px;
-
     &:hover > div {
       opacity: 1;
       transition: all .2s ease;
@@ -76,6 +75,18 @@ const Carousel = {
     text-decoration: none;
     user-select: none;
     z-index: 999;
+  `,
+  PriceDrop: styled.div`
+    color: #fff;
+    font-size: .7rem;
+    position: absolute;
+    left: .4rem;
+    top: .4rem;
+    font-weight: 400;
+    background-color: rgba(206,75,3,.8);
+    border: .1em solid rgba(216,79,3,.5);
+    z-index: 1;
+    padding: .05rem .2rem 0 .25rem;
   `
 };
 
@@ -141,6 +152,16 @@ class SmallCarousel extends Component {
   }
 
   render () {
+    let priceDropIndicator = null;
+    if (this.props.priceDiscounted) {
+      const discount = Math.round(
+        (this.props.priceOriginal - this.props.priceDiscounted)
+         / this.props.priceOriginal * 100
+      );
+      priceDropIndicator = (
+        <Carousel.PriceDrop> {`${discount}% price drop`} </Carousel.PriceDrop>
+      );
+    }
     return (
       <Carousel.Wrapper>
         <Carousel.Prev onClick={this.handlePrev}>&lt;</Carousel.Prev>
@@ -160,6 +181,7 @@ class SmallCarousel extends Component {
                 </Carousel.Li>);
             })}
           </Carousel.Ul>
+          {priceDropIndicator}
         </a>
       </Carousel.Wrapper>
     );
