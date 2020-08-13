@@ -26,8 +26,24 @@ const getByTag = (tags, limit = 3) => {
   return Article.find({tags: {$in: tags}}).limit(limit).exec();
 };
 
+const sortOptions = [
+  {_id: 1},
+  {_id: -1},
+  {title: 1},
+  {title: -1},
+  {content: 1},
+  {content: -1}
+];
+
+const getByTagRandom = (tags, limit = 3) => {
+  return Article.find({tags: {$in: tags}}).sort(
+    sortOptions[Math.floor(Math.random() * sortOptions.length)]
+  ).limit(limit).exec();
+};
+
 module.exports = {
   add,
   get,
-  getByTag
+  getByTag,
+  getByTagRandom
 };

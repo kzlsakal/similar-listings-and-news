@@ -32,8 +32,24 @@ const getById = (itemId) => {
   return Listing.find({itemId}).exec();
 };
 
+const sortOptions = [
+  {itemId: 1},
+  {itemId: -1},
+  {style: 1},
+  {style: -1},
+  {photosSmall: 1},
+  {photosSmall: -1}
+];
+
+const getRandom = (options = {}, limit = 25) => {
+  return Listing.find(options).sort(
+    sortOptions[Math.floor(Math.random() * sortOptions.length)]
+  ).limit(limit).exec();
+};
+
 module.exports = {
   add,
   get,
-  getById
+  getById,
+  getRandom
 };

@@ -61,10 +61,51 @@ app.get('/api/listings/:category', (req, res) => {
     .catch(err => res.status(500).end('There was an error'));
 });
 
+// Handle GET requests for random listings under a category
+app.get('/api/listings/:category/random', (req, res) => {
+  const category = req.params.category;
+  models.Listing.getRandom({category})
+    .then(results => {
+      if (!results.length) {
+        res.status(404).end('404 - Category was not found');
+        return;
+      }
+      results.forEach(listing => {
+        // Add the Cloud Provider URL in front of each file name
+        // DEV: Return id calls with a max-limit of 101 while using mock images
+        const itemId = listing.itemId % 101;
+        listing.photosSmall = listing.photosSmall.map(fileName => {
+          return `${CLOUD_IMG_URL}/${itemId}/${fileName}`;
+        });
+      });
+      res.json(results).end();
+    })
+    .catch(err => res.status(500).end('There was an error'));
+});
+
 // Handle GET requests for news articles with tags
 app.get('/api/news/:tags', (req, res) => {
   const tags = req.params.tags.split(',');
   models.Article.getByTag(tags)
+    .then(results => {
+      if (!results.length) {
+        res.status(404).end('404 - No articles found');
+        return;
+      }
+      results.forEach(article => {
+        // Add the Cloud Provider URL in front of each file name
+        article.imageSmall = `${CLOUD_IMG_URL}/articles/${article.imageSmall}`;
+        article.imageFull = `${CLOUD_IMG_URL}/articles/${article.imageFull}`;
+      });
+      res.json(results).end();
+    })
+    .catch(err => res.status(500).end('There was an error'));
+});
+
+// Handle GET requests for random news articles with tags
+app.get('/api/news/:tags/random', (req, res) => {
+  const tags = req.params.tags.split(',');
+  models.Article.getByTagRandom(tags)
     .then(results => {
       if (!results.length) {
         res.status(404).end('404 - No articles found');
