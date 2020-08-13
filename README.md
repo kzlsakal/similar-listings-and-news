@@ -1,4 +1,4 @@
-# ReBurke / similar-listings-and-products
+# ReBurke / similar-listings-and-news
 
 > A module that shows similar listings and related news on a product page
 
@@ -11,20 +11,34 @@
 ## Table of Contents
 
 1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
+2. [Requirements](#requirements)
+3. [Development](#development)
+4. [Production](#production)
+5. [Screenshot](#screenshot)
 
 ## Usage
 
-> Please refer to this section for database setup once the module is implemented
+> Example URL: http://localhost:3005/item/25
+>
+> Please set up the environment variables for seamless functionality
+>
+> You may set CLOUD_IMG_URL to serve from a local directory during development
 
 ## Requirements
 
 - Node.js v12.18.1
-  - https://nodejs.org/en/
+  - https://nodejs.org/
 
-- nodemon 2.0.4
-  - https://www.npmjs.com/package/nodemon
+- MongoDB v4.2.8
+  - https://www.mongodb.com/
+
+- ### Environment Variables
+  - To retrieve images:
+    - `CLOUD_IMG_URL=<your-cloud-static-url>`
+  - Optional:
+    - `MONGODB_URL=<your-mongo-db-url>`
+    - `PORT=<your-server-port>`
+    - `URL=<your-origin-url>`
 
 ## Development
 
@@ -34,6 +48,20 @@ All commands from within the repository's root directory.
 
 ```sh
 npm install
+```
+
+### Seeding Database
+
+Seed database with 101 listings:
+
+```sh
+npm run seed
+```
+
+Seed with a custom amount:
+
+```sh
+npm run seed amount=<custom-amount>
 ```
 
 ### Development Server
@@ -48,12 +76,18 @@ npm run build:dev
 npm run start:dev
 ```
 
+### Testing
+
+```sh
+npm test
+```
+
 ## Production
 
 ### Webpack Production Build
 
 ```sh
-npm build
+npm run build
 ```
 
 ### Node Express Server
@@ -61,3 +95,7 @@ npm build
 ```sh
 npm start
 ```
+
+## Screenshot
+
+![Screenshot](/docs/screenshot.png?raw=true "Optional Title")
