@@ -91,7 +91,7 @@ const Carousel = {
 };
 
 class SmallCarousel extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.handlePrev = this.handlePrev.bind(this);
     this.handleNext = this.handleNext.bind(this);
