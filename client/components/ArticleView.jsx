@@ -15,13 +15,14 @@ const Styles = {
   `,
   ViewPort: styled.div`
     display: grid;
-    grid-template-rows: 10em 4em 1fr;
+    grid-template-rows: 10rem min-content 1fr;
     background-color: #fff;
     border: .01em solid rgba(33,33,33,.45);
     height: 80%;
     margin: auto;
-    min-width: 50em;
-    min-height: 30em;
+    max-width: 80rem;
+    min-width: 20rem;
+    min-height: 30rem;
     overflow: auto;
     position: relative;
     top: 9%;
@@ -50,15 +51,20 @@ const Styles = {
     width: 100%;
   `,
   Title: styled.span`
+    align-items: flex-end;
     color: #fff;
-    display: block;
-    font-size: 3em;
-    padding: 2em 0 0 .2em;
+    display: flex;
+    font-size: 2rem;
+    font-size: 3vmax;
+    height: 100%;
+    padding-left: .2em;
     text-shadow: .02em .02em rgba(33,33,33,.4);
     user-select: none;
+    overflow: hidden;
   `,
   Social: styled.div`
-    padding: 2em 4em;
+    padding: 4% 10%;
+    padding: 1vmax 10%;
     text-align: right;
   `,
   SocialImage: styled.span`
@@ -68,8 +74,8 @@ const Styles = {
     display: inline-block;
     margin-left: .8em;
     opacity: .5;
-    height: 16px;
-    width: 16px;
+    height: 1rem;
+    width: 1rem;
   `,
   Info: styled.div`
     display: grid;
@@ -79,9 +85,8 @@ const Styles = {
     font-style: italic;
     `,
   PostInfo: styled.div`
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    padding: 1em 0 0 4em;
+    display: block;
+    margin: 2% 0 0 10%;
   `,
   AuthorName: styled.span`
     cursor: pointer;
@@ -90,8 +95,10 @@ const Styles = {
   `,
   TypeInfo: styled.span`
     cursor: pointer;
+    display: block;
     font-weight: 700;
     letter-spacing: .08em;
+    margin: 2% 0;
     font-style: normal;
     text-transform: uppercase;
     &:hover {
@@ -100,7 +107,7 @@ const Styles = {
     }
   `,
   Content: styled.div`
-    padding: 3em;
+    padding: 3%;
     text-align: justify;
     white-space: pre-line;
   `,
@@ -134,8 +141,9 @@ const Styles = {
     }
   `,
   NextArticleContent: styled.div`
-    margin: .5em 1em 0 1em;
-    padding-right: 5em;
+    margin: 1% 2% 0 2%;
+    padding-right: 10%;
+    text-align: left;
     `,
   NextArticleExcerpt: styled.div`
     font-size: .8em;

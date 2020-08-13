@@ -5,7 +5,6 @@ import styled from 'styled-components';
 const ListingsRow = styled.div`
   display: flex;
   flex-wrap: nowrap;
-  min-width: 50em;
   overflow-x: auto;
   overflow-y: hidden;
   padding: 0.3em 2.9em;
