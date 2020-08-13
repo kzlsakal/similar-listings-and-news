@@ -98,4 +98,4 @@ npm start
 
 ## Screenshot
 
-![Screenshot](/docs/screenshot.png?raw=true "Optional Title")
+![Screenshot](./docs/screenshot.png?raw=true "Optional Title")
