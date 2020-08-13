@@ -14,6 +14,7 @@
 2. [Requirements](#requirements)
 3. [Development](#development)
 4. [Production](#production)
+5. [Screenshot](#screenshot)
 
 ## Usage
 
@@ -26,10 +27,10 @@
 ## Requirements
 
 - Node.js v12.18.1
-  - https://nodejs.org/en/
+  - https://nodejs.org/
 
 - MongoDB v4.2.8
-  - https://nodejs.org/en/
+  - https://www.mongodb.com/
 
 - ### Environment Variables
   - To retrieve images:
@@ -94,3 +95,7 @@ npm run build
 ```sh
 npm start
 ```
+
+## Screenshot
+
+![Screenshot](/docs/screenshot.png?raw=true "Optional Title")
