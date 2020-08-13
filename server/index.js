@@ -102,4 +102,23 @@ app.get('/api/news/:tags', (req, res) => {
     .catch(err => res.status(500).end('There was an error'));
 });
 
+// Handle GET requests for random news articles with tags
+app.get('/api/news/:tags/random', (req, res) => {
+  const tags = req.params.tags.split(',');
+  models.Article.getByTagRandom(tags)
+    .then(results => {
+      if (!results.length) {
+        res.status(404).end('404 - No articles found');
+        return;
+      }
+      results.forEach(article => {
+        // Add the Cloud Provider URL in front of each file name
+        article.imageSmall = `${CLOUD_IMG_URL}/articles/${article.imageSmall}`;
+        article.imageFull = `${CLOUD_IMG_URL}/articles/${article.imageFull}`;
+      });
+      res.json(results).end();
+    })
+    .catch(err => res.status(500).end('There was an error'));
+});
+
 app.listen(PORT, () => console.log(`Sln listening at ${URL}:${PORT}`));

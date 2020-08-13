@@ -51,7 +51,7 @@ class SlnWrapper extends Component {
     this.state.listing.category,
     this.state.listing.brand
   ]) {
-    return fetch(`${ORIGIN}/api/news/${tags.join(',')}`)
+    return fetch(`${ORIGIN}/api/news/${tags.join(',')}/random`)
       .then(res => res.json())
       .then(res => res.slice(0, 3))
       .then(relatedNews => this.setState({relatedNews}))
