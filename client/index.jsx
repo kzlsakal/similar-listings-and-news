@@ -40,7 +40,7 @@ class SlnWrapper extends Component {
   }
 
   getSimilarListings (category = this.state.listing.category) {
-    return fetch(`${ORIGIN}/api/listings/${category}`)
+    return fetch(`${ORIGIN}/api/listings/${category}/random`)
       .then(res => res.json())
       .then(res => res.slice(0, 25))
       .then(similarListings => this.setState({similarListings}))
