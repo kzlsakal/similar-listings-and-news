@@ -45,8 +45,8 @@ describe ('Similar Listings', () => {
   test('Shows the scroll left button if there is room to scroll left', (done) => {
     listingRow.scrollLeft = 200;
     component.instance().handleScroll();
-    listingRow.scrollLeft = 0;
     expect(scrollLeft.style.visibility).toBe('visible');
+    listingRow.scrollLeft = 0;
     done();
   });
 
@@ -56,6 +56,7 @@ describe ('Similar Listings', () => {
     event.target.id = 'sln-listings-scroll-right';
     component.instance().handleScrollButton(event);
     expect(listingRow.scrollLeft).toBeGreaterThan(150);
+    listingRow.scrollLeft = 0;
     done();
   });
 
