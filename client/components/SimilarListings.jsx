@@ -10,51 +10,132 @@ const Styles = {
     overflow-x: auto;
     overflow-y: hidden;
     padding: 0.3em 2.9em;
+    scroll-behavior: smooth;
+  `,
+  ScrollRight: styled.div`
+    align-items: center;
+    cursor: pointer;
+    background-color: rgba(255,255,255,.8);
+    border: .05rem solid #dadada;
+    border-right: none;
+    border-top-left-radius: 4rem;
+    border-bottom-left-radius: 4rem;
+    display: flex;
+    font-family: serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    height: 5.5rem;
+    justify-content: center;
+    padding-left: .3rem;
+    position: absolute;
+    right: 0;
+    top: 42%;
+    transition: visibility .5s ease, opacity .3s ease;
+    user-select: none;
+    width: 2.5rem;
+    z-index: 1000;
+    @media (max-width: 768px) {
+      transform: scale(0);
+    }
+    &:hover {
+      color: #057bc4;
+      transition: color .2s ease;
+    }
+  `,
+  ScrollLeft: styled.div`
+  align-items: center;
+    cursor: pointer;
+    left: 0;
+    background-color: rgba(255,255,255,.8);
+    border: .05rem solid #dadada;
+    border-left: none;
+    border-top-right-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+    display: flex;
+    height: 5.5rem;
+    font-family: serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    justify-content: center;
+    padding-right: .3rem;
+    position: absolute;
+    top: 42%;
+    transition: visibility .5s ease, opacity .3s ease;
+    user-select: none;
+    width: 2.5rem;
+    z-index: 1000;
+    @media (max-width: 768px) {
+      transform: scale(0);
+    }
+    &:hover {
+      color: #057bc4;
+      transition: color .2s ease;
+    }
+  `,
+  Wrapper: styled.div`
+    position: relative;
   `
 };
 
 class SimilarListings extends Component {
   constructor (props) {
     super(props);
-    this.handleScroll = this.handleScroll.bind(this);
-    this.state = {
-      scrollLeftEnabled: 0,
-      scrollRightEnabled: 1
-    };
+  }
+
+  componentDidMount () {
+    const scrollLeft = document.getElementById('sln-listings-scroll-left');
+    scrollLeft.style.visibility = 'hidden';
   }
 
   handleScroll () {
     const clientWidth = document.getElementById('sln-listings-row').clientWidth;
     const scrollWidth = document.getElementById('sln-listings-row').scrollWidth;
     const scrollX = document.getElementById('sln-listings-row').scrollLeft;
+    const scrollLeft = document.getElementById('sln-listings-scroll-left');
+    const scrollRight = document.getElementById('sln-listings-scroll-right');
     if (scrollX === 0) {
-      this.setState({scrollLeftEnabled: 0});
+      scrollLeft.style.opacity = '0';
+      scrollLeft.style.visibility = 'hidden';
     }
     if (scrollX > 0) {
-      this.setState({scrollLeftEnabled: 1});
+      scrollLeft.style.opacity = '1';
+      scrollLeft.style.visibility = 'visible';
     }
     if (scrollX + clientWidth >= scrollWidth) {
-      this.setState({scrollRightEnabled: 0});
+      scrollRight.style.opacity = '0';
+      scrollRight.style.visibility = 'hidden';
     }
     if (scrollX + clientWidth < scrollWidth) {
-      this.setState({scrollRightEnabled: 1});
+      scrollRight.style.opacity = '1';
+      scrollRight.style.visibility = 'visible';
     }
   }
 
   handleScrollButton (event) {
-    console.log(event.target);
+    const row = document.getElementById('sln-listings-row');
+    const clientWidth = document.getElementById('sln-listings-row').clientWidth;
+    const scrollWidth = document.getElementById('sln-listings-row').scrollWidth;
+    const maxScroll = scrollWidth - clientWidth;
+    if (event.target.id === 'sln-listings-scroll-right') {
+      row.scrollLeft = Math.min(maxScroll, row.scrollLeft + clientWidth * .92);
+    }
+    if (event.target.id === 'sln-listings-scroll-left') {
+      row.scrollLeft = Math.max(0, row.scrollLeft - clientWidth * .92);
+    }
   }
 
   render () {
     return (
-      <div>
+      <Styles.Wrapper>
         <h2>Similar Listings</h2>
         <Styles.ListingsRow onScroll={this.handleScroll} id="sln-listings-row">
           {this.props.listings.map(
             (listing, idx) => <ListingBox listing={listing} key={idx} />
           )}
         </Styles.ListingsRow>
-      </div>
+        <Styles.ScrollRight id="sln-listings-scroll-right" onClick={this.handleScrollButton}>&gt;</Styles.ScrollRight>
+        <Styles.ScrollLeft id="sln-listings-scroll-left" onClick={this.handleScrollButton}>&lt;</Styles.ScrollLeft>
+      </Styles.Wrapper>
     );
   }
 }

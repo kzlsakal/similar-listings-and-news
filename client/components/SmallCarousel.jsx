@@ -45,7 +45,7 @@ const Carousel = {
     color: #fff;
     display: flex;
     font-family: serif;
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 400;
     height: 100%;
     justify-content: flex-start;
@@ -63,7 +63,7 @@ const Carousel = {
     color: #fff;
     display: flex;
     font-family: serif;
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 400;
     height: 100%;
     justify-content: flex-end;
