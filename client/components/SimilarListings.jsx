@@ -14,6 +14,7 @@ const Styles = {
   `,
   ScrollRight: styled.div`
     align-items: center;
+    color: #838383;
     cursor: pointer;
     background-color: rgba(255,255,255,.8);
     border: .05rem solid #dadada;
@@ -43,7 +44,8 @@ const Styles = {
     }
   `,
   ScrollLeft: styled.div`
-  align-items: center;
+    align-items: center;
+    color: #838383;
     cursor: pointer;
     left: 0;
     background-color: rgba(255,255,255,.8);
