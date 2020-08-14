@@ -60,6 +60,15 @@ describe ('Similar Listings', () => {
     done();
   });
 
+  test('Hides the scroll right button when there is no room to scroll', (done) => {
+    listingRow.scrollLeft = 1200;
+    component.instance().handleScroll();
+    expect(scrollRight.style.visibility).toBe('hidden');
+    listingRow.scrollLeft = 0;
+    component.instance().handleScroll();
+    done();
+  });
+
   test('Scrolls left when the user clicks the scroll left button', (done) => {
     listingRow.scrollLeft = 150;
     const event = {target: {}};
