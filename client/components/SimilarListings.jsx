@@ -25,15 +25,15 @@ const Styles = {
     font-family: serif;
     font-size: 2.25rem;
     font-weight: 700;
-    height: 5.5rem;
+    height: 4.8rem;
     justify-content: center;
     padding-left: .3rem;
     position: absolute;
     right: 0;
-    top: 42%;
+    top: 45%;
     transition: visibility .5s ease, opacity .3s ease;
     user-select: none;
-    width: 2.5rem;
+    width: 2rem;
     z-index: 1000;
     @media (max-width: 768px) {
       transform: scale(0);
@@ -54,17 +54,17 @@ const Styles = {
     border-top-right-radius: 4rem;
     border-bottom-right-radius: 4rem;
     display: flex;
-    height: 5.5rem;
+    height: 4.8rem;
     font-family: serif;
     font-size: 2.25rem;
     font-weight: 700;
     justify-content: center;
     padding-right: .3rem;
     position: absolute;
-    top: 42%;
+    top: 45%;
     transition: visibility .5s ease, opacity .3s ease;
     user-select: none;
-    width: 2.5rem;
+    width: 2rem;
     z-index: 1000;
     @media (max-width: 768px) {
       transform: scale(0);
