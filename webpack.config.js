@@ -26,7 +26,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
+              name: './sln-assets/[name].[ext]',
               limit: 10000,
               mimetype: 'application/font-woff',
             },
