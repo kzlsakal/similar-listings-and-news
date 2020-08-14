@@ -35,14 +35,18 @@ class SlnWrapper extends Component {
   }
 
   getListing () {
-    return fetch(`${PROTOCOL}://${HOST}:${PORT}/api/${PATH}`)
+    return fetch(
+      `${PROTOCOL}://${HOST}:${PORT}/api/${PATH}`
+    )
       .then(res => res.json())
       .then(listing => this.setState({listing}))
       .catch(err => null);
   }
 
   getSimilarListings (category = this.state.listing.category) {
-    return fetch(`${PROTOCOL}://${HOST}:${PORT}/api/listings/${category}/random`)
+    return fetch(
+      `${PROTOCOL}://${HOST}:${PORT}/api/listings/${category}/random`
+    )
       .then(res => res.json())
       .then(res => res.slice(0, 25))
       .then(similarListings => this.setState({similarListings}))
@@ -53,7 +57,9 @@ class SlnWrapper extends Component {
     this.state.listing.category,
     this.state.listing.brand
   ]) {
-    return fetch(`${PROTOCOL}://${HOST}:${PORT}/api/news/${tags.join(',')}/random`)
+    return fetch(
+      `${PROTOCOL}://${HOST}:${PORT}/api/news/${tags.join(',')}/random`
+    )
       .then(res => res.json())
       .then(res => res.slice(0, 3))
       .then(relatedNews => this.setState({relatedNews}))
