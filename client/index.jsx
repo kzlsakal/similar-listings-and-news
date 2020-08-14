@@ -4,8 +4,10 @@ import Styles from './styles.jsx';
 import SimilarListings from './components/SimilarListings.jsx';
 import RelatedNews from './components/RelatedNews.jsx';
 import ArticleView from './components/ArticleView.jsx';
-const ORIGIN = document.location.origin;
 const PATH = document.location.pathname.slice(1);
+const PROTOCOL = 'http';
+const HOST = 'localhost';
+const PORT = '3005';
 
 class SlnWrapper extends Component {
   constructor (props) {
@@ -33,14 +35,14 @@ class SlnWrapper extends Component {
   }
 
   getListing () {
-    return fetch(`${ORIGIN}/api/${PATH}`)
+    return fetch(`${PROTOCOL}://${HOST}:${PORT}/api/${PATH}`)
       .then(res => res.json())
       .then(listing => this.setState({listing}))
       .catch(err => null);
   }
 
   getSimilarListings (category = this.state.listing.category) {
-    return fetch(`${ORIGIN}/api/listings/${category}/random`)
+    return fetch(`${PROTOCOL}://${HOST}:${PORT}/api/listings/${category}/random`)
       .then(res => res.json())
       .then(res => res.slice(0, 25))
       .then(similarListings => this.setState({similarListings}))
@@ -51,7 +53,7 @@ class SlnWrapper extends Component {
     this.state.listing.category,
     this.state.listing.brand
   ]) {
-    return fetch(`${ORIGIN}/api/news/${tags.join(',')}/random`)
+    return fetch(`${PROTOCOL}://${HOST}:${PORT}/api/news/${tags.join(',')}/random`)
       .then(res => res.json())
       .then(res => res.slice(0, 3))
       .then(relatedNews => this.setState({relatedNews}))
