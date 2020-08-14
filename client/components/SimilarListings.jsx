@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import ListingBox from './ListingBox.jsx';
 import styled from 'styled-components';
 
-
 const Styles = {
   ListingsRow: styled.div`
     display: flex;

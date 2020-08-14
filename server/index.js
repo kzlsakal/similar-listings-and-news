@@ -6,6 +6,11 @@ const PORT = process.env.PORT || 3005;
 const URL = process.env.URL || 'http://localhost';
 const CLOUD_IMG_URL = process.env.CLOUD_IMG_URL || '';
 
+app.use('/', function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, './../public')));
 app.use('/item/:id', express.static(path.resolve(__dirname, './../public')));
