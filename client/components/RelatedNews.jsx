@@ -14,6 +14,8 @@ const Styles = {
     font-weight: 400;
     grid-template-columns: 1fr 1fr 1fr;
     margin: .3em 2.8em;
+    overflow-x: auto;
+    scroll-behavior: smooth;
   `
 };
 

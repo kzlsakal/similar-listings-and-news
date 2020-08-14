@@ -6,6 +6,7 @@ const Styles = {
     border: .01em solid #e4e4e4;
     display: grid;
     grid-template-rows: 10em 3.8em 1.5em;
+    min-width: 12rem;
     &:hover {
       box-shadow: 0 .1em .2em 0 rgba(33,33,33,.15);
       color: #f6870f;

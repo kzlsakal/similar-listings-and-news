@@ -8,7 +8,7 @@ const ORIGIN = document.location.origin;
 const PATH = document.location.pathname.slice(1);
 
 class SlnWrapper extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.toggleArticle = this.toggleArticle.bind(this);
     this.state = {
