@@ -99,3 +99,5 @@ npm start
 ## Screenshot
 
 ![Screenshot](./docs/screenshot.png?raw=true "Screenshot")
+![Article](./docs/article-modal.png?raw=true "Article Modal Pop-Up")
+![Mobile](./docs/mobile.png?raw=true "Mobile View")
