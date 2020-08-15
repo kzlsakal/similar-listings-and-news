@@ -8,8 +8,9 @@ const Styles = {
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 0.3em 2.9em;
+    padding: .3em 0 .3em 2.9em;
     scroll-behavior: smooth;
+    width: 100%;
   `,
   ScrollRight: styled.div`
     align-items: center;
@@ -28,7 +29,7 @@ const Styles = {
     justify-content: center;
     padding-left: .3rem;
     position: absolute;
-    right: 0;
+    right: -1.3em;
     top: 45%;
     transition: visibility .5s ease, opacity .3s ease;
     user-select: none;
@@ -75,6 +76,7 @@ const Styles = {
   `,
   Wrapper: styled.div`
     position: relative;
+    width: 100%;
   `
 };
 

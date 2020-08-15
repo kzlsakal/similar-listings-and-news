@@ -5,6 +5,8 @@ import NewsBox from './NewsBox.jsx';
 const Styles = {
   NewsWrapper: styled.div`
     margin-top: 1.5em;
+    @media (max-width: 768px) {
+      min-width: 110vw
   `,
   NewsRow: styled.div`
     color: #414141;
