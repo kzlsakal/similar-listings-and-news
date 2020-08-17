@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ListingBox from './ListingBox.jsx';
 import styled from 'styled-components';
 

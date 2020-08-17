@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styled, {css, createGlobalStyle} from 'styled-components';
 
 const Carousel = {
