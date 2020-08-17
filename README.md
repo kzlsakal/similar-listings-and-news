@@ -84,6 +84,10 @@ npm test
 
 ## Production
 
+### Environment Setup
+
+>Add `SERVICE_MODE=production` to the environment variables
+
 ### Webpack Production Build
 
 ```sh

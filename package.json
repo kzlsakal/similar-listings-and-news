@@ -9,7 +9,7 @@
     "seed": "node -r dotenv/config spec/db-seed",
     "build": "webpack -p",
     "build:dev": "webpack -d --watch",
-    "start": "node ./server/index.js",
+    "start": "SERVICE_MODE=production node ./server/index.js",
     "start:dev": "nodemon -r dotenv/config ./server/index.js"
   },
   "repository": {
