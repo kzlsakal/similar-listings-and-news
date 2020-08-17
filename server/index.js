@@ -5,6 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3005;
 const URL = process.env.URL || 'http://localhost';
 const CLOUD_IMG_URL = process.env.CLOUD_IMG_URL || '';
+const PRODUCTION_MODE = process.env.SERVICE_MODE === 'production';
 
 app.use('/', function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -33,9 +34,12 @@ app.get('/api/item/:id', (req, res) => {
         return;
       }
       const listing = results[0];
-      // Add the Cloud Provider URL in front of each file name
       // DEV: Return id calls with a max-limit of 101 while using mock images
-      const itemId = listing.itemId % 101;
+      let itemId = listing.itemId;
+      if (!PRODUCTION_MODE) {
+        itemId = itemId % 101;
+      }
+      // Add the Cloud Provider URL in front of each file name
       listing.photosSmall = listing.photosSmall.map(fileName => {
         return `${CLOUD_IMG_URL}/${itemId}/${fileName}`;
       });
@@ -54,9 +58,12 @@ app.get('/api/listings/:category', (req, res) => {
         return;
       }
       results.forEach(listing => {
-        // Add the Cloud Provider URL in front of each file name
         // DEV: Return id calls with a max-limit of 101 while using mock images
-        const itemId = listing.itemId % 101;
+        let itemId = listing.itemId;
+        if (!PRODUCTION_MODE) {
+          itemId = itemId % 101;
+        }
+        // Add the Cloud Provider URL in front of each file name
         listing.photosSmall = listing.photosSmall.map(fileName => {
           return `${CLOUD_IMG_URL}/${itemId}/${fileName}`;
         });
@@ -76,9 +83,12 @@ app.get('/api/listings/:category/random', (req, res) => {
         return;
       }
       results.forEach(listing => {
-        // Add the Cloud Provider URL in front of each file name
         // DEV: Return id calls with a max-limit of 101 while using mock images
-        const itemId = listing.itemId % 101;
+        let itemId = listing.itemId;
+        if (!PRODUCTION_MODE) {
+          itemId = itemId % 101;
+        }
+        // Add the Cloud Provider URL in front of each file name
         listing.photosSmall = listing.photosSmall.map(fileName => {
           return `${CLOUD_IMG_URL}/${itemId}/${fileName}`;
         });
@@ -126,4 +136,7 @@ app.get('/api/news/:tags/random', (req, res) => {
     .catch(err => res.status(500).end('There was an error'));
 });
 
-app.listen(PORT, () => console.log(`Sln listening at ${URL}:${PORT}`));
+app.listen(PORT, () => console.log(
+  `Sln listening at ${URL}:${PORT}`
+  + ` on ${PRODUCTION_MODE ? 'production' : 'development'} mode`
+));

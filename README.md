@@ -84,6 +84,11 @@ npm test
 
 ## Production
 
+### Environment Setup
+
+- Add `SERVICE_MODE=production` to the environment variables
+- Add the deployment address to client/config.jsx
+
 ### Webpack Production Build
 
 ```sh

@@ -1,13 +1,11 @@
-import React, {Component} from 'react';
+import { PROTOCOL, HOST, PORT } from './config.jsx';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Styles from './styles.jsx';
 import SimilarListings from './components/SimilarListings.jsx';
 import RelatedNews from './components/RelatedNews.jsx';
 import ArticleView from './components/ArticleView.jsx';
 const PATH = document.location.pathname.slice(1);
-const PROTOCOL = 'http';
-const HOST = 'localhost';
-const PORT = '3005';
 
 class SlnWrapper extends Component {
   constructor (props) {

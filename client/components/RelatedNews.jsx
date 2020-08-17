@@ -13,9 +13,13 @@ const Styles = {
     gap: 1.8em;
     font-weight: 400;
     grid-template-columns: 1fr 1fr 1fr;
-    margin: .3em 2.8em;
+    margin: .3em 0;
     overflow-x: auto;
+    padding-left: 2.8em;
     scroll-behavior: smooth;
+    @media (max-width: 768px) {
+      width: 95%;
+    }
   `
 };
 

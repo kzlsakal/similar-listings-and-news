@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ListingBox from './ListingBox.jsx';
 import styled from 'styled-components';
 
@@ -11,6 +11,9 @@ const Styles = {
     padding: .3em 0 .3em 2.9em;
     scroll-behavior: smooth;
     width: 100%;
+    @media (max-width: 768px) {
+      width: 95%;
+    }
   `,
   ScrollRight: styled.div`
     align-items: center;
@@ -36,7 +39,7 @@ const Styles = {
     width: 2rem;
     z-index: 1000;
     @media (max-width: 768px) {
-      transform: scale(0);
+      display: none;
     }
     &:hover {
       color: #057bc4;
@@ -67,7 +70,7 @@ const Styles = {
     width: 2rem;
     z-index: 1000;
     @media (max-width: 768px) {
-      transform: scale(0);
+      display: none;
     }
     &:hover {
       color: #057bc4;
