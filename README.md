@@ -1,5 +1,7 @@
 # ReBurke / similar-listings-and-news
 
+[![CI Status](https://circleci.com/gh/HRR47-FEC-Burke/similar-listings-and-news.svg?style=shield)](https://circleci.com/gh/HRR47-FEC-Burke/similar-listings-and-news)
+
 > A module that shows similar listings and related news on a product page
 
 ## Related Projects
@@ -100,6 +102,21 @@ npm run build
 ```sh
 npm start
 ```
+
+### Hosting The Bundle on Cloud
+
+- Create the grunt-aws.json file at $HOME/.aws directory
+  ```sh
+  {
+    "accessKeyId": "<your-access-keyId>",
+    "secretAccessKey": "<your-access-secret>",
+    "bucket": "<your-bucket-name>",
+    "path": "<optional-path>/" || ""
+  }
+  ```
+- Add `CLOUD_BUNDLE_URL=<your-bucket-url[-path]>` to the environment variables
+
+- Run `grunt deploy` on the terminal
 
 ## Screenshot
 

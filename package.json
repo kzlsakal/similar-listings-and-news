@@ -41,6 +41,7 @@
     "mongoose-sequence": "^5.2.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {
@@ -56,6 +57,9 @@
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "faker": "^4.1.0",
     "file-loader": "^6.0.0",
+    "grunt": "~0.4.5",
+    "grunt-aws": "^0.7.1",
+    "grunt-webpack": "^4.0.2",
     "jest": "^26.2.2",
     "nodemon": "^2.0.4",
     "webpack": "^4.44.1",

@@ -1,6 +1,7 @@
 import { PROTOCOL, HOST, PORT } from './config.jsx';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import {Helmet} from 'react-helmet';
 import Styles from './styles.jsx';
 import SimilarListings from './components/SimilarListings.jsx';
 import RelatedNews from './components/RelatedNews.jsx';
@@ -83,6 +84,9 @@ class SlnWrapper extends Component {
   render () {
     return (
       <div>
+        <Helmet>
+          <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+        </Helmet>
         <Styles.Global />
         <SimilarListings listings={this.state.similarListings} />
         <RelatedNews
