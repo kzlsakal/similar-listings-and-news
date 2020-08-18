@@ -58,6 +58,7 @@
     "faker": "^4.1.0",
     "file-loader": "^6.0.0",
     "grunt": "~0.4.5",
+    "grunt-webpack": "^4.0.2",
     "jest": "^26.2.2",
     "nodemon": "^2.0.4",
     "webpack": "^4.44.1",
