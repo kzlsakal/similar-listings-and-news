@@ -57,7 +57,7 @@
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
     "faker": "^4.1.0",
     "file-loader": "^6.0.0",
-    "grunt": "~0.4.5",
+    "grunt": "^1.2.1",
     "grunt-aws": "^0.7.1",
     "grunt-webpack": "^4.0.2",
     "jest": "^26.2.2",
