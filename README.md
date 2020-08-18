@@ -103,6 +103,21 @@ npm run build
 npm start
 ```
 
+### Hosting The Bundle on Cloud
+
+- Create the grunt-aws.json file at $HOME/.aws directory
+  ```sh
+  {
+    "accessKeyId": "<your-access-keyId>",
+    "secretAccessKey": "<your-access-secret>",
+    "bucket": "<your-bucket-name>",
+    "path": "<optional-path>/" || ""
+  }
+  ```
+- Add `CLOUD_BUNDLE_URL=<your-bucket-url[-path]>` to the environment variables
+
+- Run `grunt deploy` on the terminal
+
 ## Screenshot
 
 ![Screenshot](./docs/screenshot.png?raw=true "Screenshot")
