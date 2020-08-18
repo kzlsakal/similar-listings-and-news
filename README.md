@@ -1,5 +1,7 @@
 # ReBurke / similar-listings-and-news
 
+[![CI Status](https://circleci.com/gh/HRR47-FEC-Burke/similar-listings-and-news.svg?style=shield)](https://circleci.com/gh/HRR47-FEC-Burke/similar-listings-and-news)
+
 > A module that shows similar listings and related news on a product page
 
 ## Related Projects

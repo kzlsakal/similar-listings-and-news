@@ -19,6 +19,7 @@ const Styles = {
     scroll-behavior: smooth;
     @media (max-width: 768px) {
       width: 95%;
+      padding-left: 5%;
     }
   `
 };

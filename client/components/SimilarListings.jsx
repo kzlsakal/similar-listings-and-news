@@ -13,6 +13,7 @@ const Styles = {
     width: 100%;
     @media (max-width: 768px) {
       width: 95%;
+      padding-left: 5%;
     }
   `,
   ScrollRight: styled.div`
