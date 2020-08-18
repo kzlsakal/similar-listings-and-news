@@ -5,17 +5,8 @@ const app = express();
 const PORT = process.env.PORT || 3005;
 const URL = process.env.URL || 'http://localhost';
 const CLOUD_IMG_URL = process.env.CLOUD_IMG_URL || '';
-const CLOUD_ASSET_URL = process.env.CLOUD_ASSET_URL || '';
 const CLOUD_BUNDLE_URL = process.env.CLOUD_BUNDLE_URL || '';
 const PRODUCTION_MODE = process.env.SERVICE_MODE === 'production';
-
-// Redirect asset requests if hosted on the cloud
-if (CLOUD_ASSET_URL) {
-  app.get('*/sln-assets/:asset', (req, res) => {
-    const asset = req.params.asset;
-    res.redirect(`${CLOUD_ASSET_URL}/assets/${asset}`);
-  });
-}
 
 // Redirect webpack bundle requests if hosted on the cloud
 if (CLOUD_BUNDLE_URL) {
