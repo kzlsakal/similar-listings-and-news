@@ -1,0 +1,6 @@
+.env
+.env.docker
+coverage
+node_modules
+npm-debug.log
+public/similar-listings-news.bundle.js

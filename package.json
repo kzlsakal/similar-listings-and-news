@@ -8,9 +8,10 @@
     "test": "jest",
     "seed": "node -r dotenv/config spec/db-seed",
     "build": "webpack -p",
-    "build:dev": "webpack -d --watch",
+    "build:watch": "webpack -d --watch",
     "start": "SERVICE_MODE=production node ./server/index.js",
-    "start:dev": "nodemon -r dotenv/config ./server/index.js"
+    "start:dev": "node -r dotenv/config ./server/index.js",
+    "start:watch": "nodemon -r dotenv/config ./server/index.js"
   },
   "repository": {
     "type": "git",
@@ -54,7 +55,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^7.6.0",
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-config-hackreactor": "https://github.com/reactorcore/eslint-config-hackreactor",
     "faker": "^4.1.0",
     "file-loader": "^6.0.0",
     "grunt": "^1.2.1",

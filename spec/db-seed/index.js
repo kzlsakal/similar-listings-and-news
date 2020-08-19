@@ -13,7 +13,7 @@ if (process.argv.slice(2)[0]) {
 }
 
 // Generate articles in the amount of 1/5 of listings, minimum 10.
-generateArticleAmount = Math.max(generateAmount / 5, 10);
+generateArticleAmount = Math.floor(Math.max(generateAmount / 5, 10));
 
 mongoose.connect(process.env.MONGODB_URL || DEFAULT_DB_URL, {
   useNewUrlParser: true,

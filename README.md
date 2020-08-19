@@ -71,11 +71,11 @@ npm run seed amount=<custom-amount>
 On two separate terminal windows:
 
 ```sh
-npm run build:dev
+npm run build:watch
 ```
 
 ```sh
-npm run start:dev
+npm run start:watch
 ```
 
 ### Testing
@@ -116,7 +116,7 @@ npm start
   ```
 - Add `CLOUD_BUNDLE_URL=<your-bucket-url[-path]>` to the environment variables
 
-- Run `grunt deploy` on the terminal
+- Run `grunt upload` on the terminal
 
 ## Screenshot
 

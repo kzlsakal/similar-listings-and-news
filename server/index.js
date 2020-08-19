@@ -27,7 +27,7 @@ app.use(express.static(path.resolve(__dirname, './../public')));
 app.use('/item/:id', express.static(path.resolve(__dirname, './../public')));
 
 // Handle GET Requests for a single listing item
-app.get('/api/item/:id', (req, res) => {
+app.get('*/api/item/:id', (req, res) => {
   // Get the item id from the URL
   let itemId = req.params.id;
   // If URL includes a human-friendly name after id, find where it starts.
@@ -59,7 +59,7 @@ app.get('/api/item/:id', (req, res) => {
 });
 
 // Handle GET requests for listings under a category
-app.get('/api/listings/:category', (req, res) => {
+app.get('*/api/listings/:category', (req, res) => {
   const category = req.params.category;
   models.Listing.get({category})
     .then(results => {
@@ -84,7 +84,7 @@ app.get('/api/listings/:category', (req, res) => {
 });
 
 // Handle GET requests for random listings under a category
-app.get('/api/listings/:category/random', (req, res) => {
+app.get('*/api/listings/:category/random', (req, res) => {
   const category = req.params.category;
   models.Listing.getRandom({category})
     .then(results => {
@@ -109,7 +109,7 @@ app.get('/api/listings/:category/random', (req, res) => {
 });
 
 // Handle GET requests for news articles with tags
-app.get('/api/news/:tags', (req, res) => {
+app.get('*/api/news/:tags', (req, res) => {
   const tags = req.params.tags.split(',');
   models.Article.getByTag(tags)
     .then(results => {
@@ -128,7 +128,7 @@ app.get('/api/news/:tags', (req, res) => {
 });
 
 // Handle GET requests for random news articles with tags
-app.get('/api/news/:tags/random', (req, res) => {
+app.get('*/api/news/:tags/random', (req, res) => {
   const tags = req.params.tags.split(',');
   models.Article.getByTagRandom(tags)
     .then(results => {
