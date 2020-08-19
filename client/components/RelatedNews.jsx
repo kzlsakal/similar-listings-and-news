@@ -7,6 +7,7 @@ const Styles = {
     margin-top: 1.5em;
   `,
   NewsRow: styled.div`
+    box-sizing: border-box;
     color: #414141;
     cursor: pointer;
     display: grid;
@@ -17,8 +18,9 @@ const Styles = {
     overflow-x: auto;
     padding-left: 2.8em;
     scroll-behavior: smooth;
+    width: 95%;
     @media (max-width: 768px) {
-      width: 95%;
+      width: 100%;
       padding-left: 5%;
     }
   `

@@ -4,15 +4,15 @@ import styled from 'styled-components';
 
 const Styles = {
   ListingsRow: styled.div`
+    box-sizing: border-box;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: .3em 0 .3em 2.9em;
+    padding: .3em 2.9em .3em 2.9em;
     scroll-behavior: smooth;
     width: 100%;
     @media (max-width: 768px) {
-      width: 95%;
       padding-left: 5%;
     }
   `,
@@ -33,7 +33,7 @@ const Styles = {
     justify-content: center;
     padding-left: .3rem;
     position: absolute;
-    right: -1.3em;
+    right: 0;
     top: 45%;
     transition: visibility .5s ease, opacity .3s ease;
     user-select: none;
