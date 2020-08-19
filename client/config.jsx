@@ -1,6 +1,6 @@
 /**
  * Service address configuration
  */
-export const PROTOCOL = process.env.PROTOCOL || 'http';
-export const HOST = process.env.HOST || 'localhost';
-export const PORT = process.env.PORT || '3005';
+export const PROTOCOL = process.env.PROTOCOL;
+export const HOST = process.env.HOST;
+export const PORT = process.env.PORT;

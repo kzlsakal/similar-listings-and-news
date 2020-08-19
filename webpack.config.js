@@ -1,5 +1,5 @@
-const Dotenv = require('dotenv-webpack');
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
   entry: path.resolve(__dirname, 'client/index.jsx'),
@@ -37,6 +37,10 @@ module.exports = {
     ]
   },
   plugins: [
-    new Dotenv()
+    new webpack.EnvironmentPlugin({
+      PROTOCOL: 'http',
+      HOST: 'localhost',
+      PORT: '3005'
+    })
   ]
 };
