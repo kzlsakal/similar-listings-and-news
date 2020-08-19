@@ -10,7 +10,7 @@
     "build": "webpack -p",
     "build:watch": "webpack -d --watch",
     "start": "SERVICE_MODE=production node ./server/index.js",
-    "start:dev": "node ./server/index.js",
+    "start:dev": "node -r dotenv/config ./server/index.js",
     "start:watch": "nodemon -r dotenv/config ./server/index.js"
   },
   "repository": {
