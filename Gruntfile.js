@@ -26,5 +26,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-aws');
 
   grunt.registerTask('default', ['webpack:dev']);
-  grunt.registerTask('deploy', ['webpack:prod', 's3']);
+  grunt.registerTask('upload', ['webpack:prod', 's3']);
 };

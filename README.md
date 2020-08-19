@@ -20,7 +20,7 @@
 
 ## Usage
 
-> Example URL: http://localhost:3005/item/25
+> Example URL: http://localhost:8080/item/25
 >
 > Please set up the environment variables for seamless functionality
 >
@@ -116,7 +116,7 @@ npm start
   ```
 - Add `CLOUD_BUNDLE_URL=<your-bucket-url[-path]>` to the environment variables
 
-- Run `grunt deploy` on the terminal
+- Run `grunt upload` on the terminal
 
 ## Screenshot
 

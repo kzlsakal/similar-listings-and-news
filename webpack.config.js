@@ -40,7 +40,7 @@ module.exports = {
     new webpack.EnvironmentPlugin({
       PROTOCOL: 'http',
       HOST: 'localhost',
-      API_PORT: '3005'
+      API_PORT: '80'
     })
   ]
 };
