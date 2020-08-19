@@ -71,11 +71,11 @@ npm run seed amount=<custom-amount>
 On two separate terminal windows:
 
 ```sh
-npm run build:dev
+npm run build:watch
 ```
 
 ```sh
-npm run start:dev
+npm run start:watch
 ```
 
 ### Testing
