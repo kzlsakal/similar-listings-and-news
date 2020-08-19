@@ -1,4 +1,3 @@
-import { PROTOCOL, HOST, PORT } from './config.jsx';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {Helmet} from 'react-helmet';
@@ -35,7 +34,7 @@ class SlnWrapper extends Component {
 
   getListing () {
     return fetch(
-      `${PROTOCOL}://${HOST}:${PORT}/api/${PATH}`
+      `/sln/api/${PATH}`
     )
       .then(res => res.json())
       .then(listing => this.setState({listing}))
@@ -44,7 +43,7 @@ class SlnWrapper extends Component {
 
   getSimilarListings (category = this.state.listing.category) {
     return fetch(
-      `${PROTOCOL}://${HOST}:${PORT}/api/listings/${category}/random`
+      `/sln/api/listings/${category}/random`
     )
       .then(res => res.json())
       .then(res => res.slice(0, 25))
@@ -57,7 +56,7 @@ class SlnWrapper extends Component {
     this.state.listing.brand
   ]) {
     return fetch(
-      `${PROTOCOL}://${HOST}:${PORT}/api/news/${tags.join(',')}/random`
+      `/sln/api/news/${tags.join(',')}/random`
     )
       .then(res => res.json())
       .then(res => res.slice(0, 3))

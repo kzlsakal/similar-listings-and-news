@@ -35,12 +35,5 @@ module.exports = {
         ],
       }
     ]
-  },
-  plugins: [
-    new webpack.EnvironmentPlugin({
-      PROTOCOL: 'http',
-      HOST: 'localhost',
-      API_PORT: '80'
-    })
-  ]
+  }
 };

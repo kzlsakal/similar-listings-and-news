@@ -4,7 +4,7 @@ WORKDIR /similar-listings-and-news
 COPY package*.json ./
 RUN npm install
 
-EXPOSE 8080
+EXPOSE 3005
 
 COPY . .
 RUN npm run build

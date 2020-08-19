@@ -20,7 +20,7 @@
 
 ## Usage
 
-> Example URL: http://localhost:8080/item/25
+> Example URL: http://localhost:3005/item/25
 >
 > Please set up the environment variables for seamless functionality
 >
