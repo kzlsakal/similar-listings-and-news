@@ -6,14 +6,14 @@ const DEFAULT_DB_URL = 'mongodb://localhost/reburke-sln';
 mongoose.Promise = Promise;
 
 // Get the desired amount of generated listings argument from the node command
-let generateAmount = 101;
+let generateAmount = 100;
 if (process.argv.slice(2)[0]) {
   // If the amount argument is provided via npm set the desired amount
   generateAmount = Number(process.argv.slice(2)[0].split('=')[1]);
 }
 
-// Generate articles in the amount of 1/5 of listings, minimum 10.
-generateArticleAmount = Math.floor(Math.max(generateAmount / 5, 10));
+// Generate articles in the amount of 1/5 of listings, minimum 15.
+generateArticleAmount = Math.floor(Math.max(generateAmount / 5, 15));
 
 mongoose.connect(process.env.MONGODB_URL || DEFAULT_DB_URL, {
   useNewUrlParser: true,
@@ -199,7 +199,7 @@ Listing.deleteMany({})
     return Article.create(...newArticles);
   })
   .then(results => {
-    console.log(`5) Added ${results.length} randomly generated listings.`);
+    console.log(`5) Added ${results.length} randomly generated news articles.`);
     const lengthOfProcess = new Date() - startOfProcess;
     console.log(`Process completed in ${lengthOfProcess} ms.`);
     mongoose.disconnect((err) => {
