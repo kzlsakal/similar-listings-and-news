@@ -13,10 +13,11 @@
 ## Table of Contents
 
 1. [Usage](#Usage)
-2. [Requirements](#requirements)
-3. [Development](#development)
-4. [Production](#production)
-5. [Screenshot](#screenshot)
+2. [Requirements](#Requirements)
+3. [Development](#Development)
+4. [Production](#Production)
+5. [Deployment](#Deployment)
+6. [Screenshot](#screenshot)
 
 ## Usage
 
@@ -87,9 +88,9 @@ npm test
 ## Production
 
 ### Environment Setup
-
-- Add `SERVICE_MODE=production` to the environment variables
-- Add the deployment address to client/config.jsx
+> If npm installation is made in production mode or the dev dependencies are
+> pruned, environment variables need to be set in the shell since dotenv is a
+> dev dependency.
 
 ### Webpack Production Build
 
@@ -102,8 +103,14 @@ npm run build
 ```sh
 npm start
 ```
+> When you start the server with $ `npm run start:dev` instead, the service is
+> designed to serve up to 100 images from your cloud. When the item id 101 is
+> requested, it serves the address of image id 1.
+
+## Deployment
 
 ### Hosting The Bundle on Cloud
+> Requires the dev dependencies to be installed
 
 - Create the grunt-aws.json file at $HOME/.aws directory
   ```sh
@@ -117,6 +124,35 @@ npm start
 - Add `CLOUD_BUNDLE_URL=<your-bucket-url[-path]>` to the environment variables
 
 - Run `grunt upload` on the terminal
+
+### Docker
+> [Requires Docker v19.03.12](https://docs.docker.com/engine/install/) and
+> [Docker Compose v1.26.2](https://docs.docker.com/compose/install/)
+
+- Create the .env.docker file to set up container environment
+  ```sh
+  CLOUD_IMG_URL=<your-cloud-static-url>
+  CLOUD_BUNDLE_URL=[your-cloud-js-bundle-url]
+  MONGODB_URL=mongodb://reburke:sln@mongo:27017/reburke-sln?authSource=admin
+  PORT=3005
+  URL=<your-origin-url>
+  ```
+
+- Run $ `docker-compose up -d` to start running the service on port 80
+
+> docker-compose.yml file uses the npm start:dev command. The service is
+> designed to serve up to 100 images from your cloud. When the item id 101 is
+> viewed, it serves the image id 1. To change this behavior, change the
+> `npm run start:dev` to `npm run start` before using docker-compose up.
+
+> docker-compose.yml file seeds the database with 100 items when the container
+> starts. To change this behavior, you can remove the `npm run seed` command
+> or change it to `npm run seed amount=<seeding-amount>`.
+
+> Dockerfile is included for the build but it will require you to setup your
+> environment variables, volumes and network in the shell. It will not work
+> out-of-the-box since the service is a multi-container module. Use Docker
+> Compose instead if Docker Run if you are not sure how to set these up.
 
 ## Screenshot
 

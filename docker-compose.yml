@@ -15,6 +15,7 @@ services:
       - .env.docker
     networks:
       - sln-network
+    command: sh -c "npm prune --production"
     command: sh -c "npm run seed && npm run start:dev"
   mongo:
     image: mongo:4.2.8
