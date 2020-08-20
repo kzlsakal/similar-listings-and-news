@@ -11,7 +11,6 @@ const PRODUCTION_MODE = process.env.SERVICE_MODE === 'production';
 // Redirect webpack bundle requests if hosted on the cloud
 if (CLOUD_BUNDLE_URL) {
   app.get('*/similar-listings-news.bundle.js', (req, res) => {
-    const asset = req.params.asset;
     res.redirect(`${CLOUD_BUNDLE_URL}/js/similar-listings-news.bundle.js`);
   });
 }
