@@ -57,6 +57,7 @@ const Styles = {
     font-size: 2rem;
     font-size: 3vmax;
     height: 100%;
+    line-height: 110%;
     padding-left: .2em;
     text-shadow: .02em .02em rgba(33,33,33,.4);
     user-select: none;
